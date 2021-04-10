@@ -1,10 +1,12 @@
 const express = require('express');
 const MongoClient = require('mongodb').MongoClient;
+require('dotenv').config();
 var cardRouter = require('./routers/cards');
 var boardRouter = require('./routers/boards');
 var userRouter = require('./routers/users');
 
-const client = new MongoClient('mongodb://localhost:27017', {
+let DB_HOST = process.env.DB_HOST;
+const client = new MongoClient(DB_HOST, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -21,12 +23,12 @@ app.use(express.urlencoded({
 app.use((req, res, next) => {
     if (!db) {
         client.connect(function (err) {
-            db = client.db('rich');
-            req.db = db.collection('schools');
+            db = client.db('mwa_db');
+            req.db = db.collection('users');
             next();
         });
     } else {
-        req.db = db.collection('schools');
+        req.db = db.collection('users');
         next();
     }
 })
