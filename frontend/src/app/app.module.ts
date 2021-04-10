@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { BoardComponent } from './components/board/board.component';
+import { BoardComponent } from './board/board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { HeaderComponent } from './components/header.component';
-import { BottomComponent } from './components/bottom.component';
+import { BottomComponent } from './bottom/bottom.component';
+import { HeaderComponent } from './header/header.component';
 
 const ROUTE: Routes = [
   {path: "", component: AppComponent}

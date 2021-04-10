@@ -14,6 +14,7 @@ import { Component } from '@angular/core';
       <app-bottom></app-bottom>
     </nb-layout-footer>
   </nb-layout>
+  <router-outlet></router-outlet>
   `,
   styles: [`
     .columns nb-layout-column {
