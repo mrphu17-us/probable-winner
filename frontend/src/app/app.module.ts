@@ -1,31 +1,42 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { RouterModule, Routes } from '@angular/router';
 import { BoardComponent } from './components/board.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { HeaderComponent } from './components/header.component';
+import { BottomComponent } from './components/bottom.component';
 
 const ROUTE: Routes = [
-  {path: "board", component: BoardComponent},
   {path: "", component: AppComponent}
 ];
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BoardComponent,
+    HeaderComponent,
+    BottomComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(ROUTE),
-    BrowserAnimationsModule,
+    CommonModule,
     ReactiveFormsModule,
-    MatGridListModule, 
-    MatFormFieldModule
+    BrowserAnimationsModule,
+    RouterModule.forRoot(ROUTE),
+    NbThemeModule.forRoot({ name: 'dark' }),
+    NbSidebarModule.forRoot(),
+    NbLayoutModule,
+    NbEvaIconsModule,
+    NbButtonGroupModule,
+    NbCardModule,
+    NbListModule
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })
