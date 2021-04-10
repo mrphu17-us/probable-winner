@@ -35,7 +35,8 @@ const ROUTE: Routes = [
     NbEvaIconsModule,
     NbButtonGroupModule,
     NbCardModule,
-    NbListModule
+    NbListModule,
+    NbThemeModule.forRoot({ name: 'dark' })
   ],
   providers: [],
   bootstrap: [AppComponent]
