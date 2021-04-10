@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
-  selector: 'app-root',
-  template: `
-  <p> board component </p>
-  `,
+  selector: 'app-board',
+  templateUrl: "board.component.html",
   styles: [`
-  mat-grid-tile {
-    background: lightblue;
-  }`]
+    nb-layout-column {
+      padding: 1rem 1rem 0.75rem !important;
+    }
+  `]
 })
 
 export class BoardComponent implements OnInit {
-
+  public fruits: any = ['a', 'b'];
   constructor() { }
 
   ngOnInit(): void {
