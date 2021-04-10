@@ -8,13 +8,12 @@ import { Component } from '@angular/core';
       <app-header></app-header>
     </nb-layout-header>
     <nb-layout-column>
-      <app-board></app-board>
+      <router-outlet></router-outlet>
     </nb-layout-column>
     <nb-layout-footer fixed>
       <app-bottom></app-bottom>
     </nb-layout-footer>
   </nb-layout>
-  <router-outlet></router-outlet>
   `,
   styles: [`
     .columns nb-layout-column {
