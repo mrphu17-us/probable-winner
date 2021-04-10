@@ -11,10 +11,7 @@ import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, Nb
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { BottomComponent } from './bottom/bottom.component';
 import { HeaderComponent } from './header/header.component';
-
-const ROUTE: Routes = [
-  {path: "", component: AppComponent}
-];
+import { PageRoutingModule } from './page-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +25,6 @@ const ROUTE: Routes = [
     CommonModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(ROUTE),
     NbThemeModule.forRoot({ name: 'dark' }),
     NbSidebarModule.forRoot(),
     NbLayoutModule,
@@ -36,7 +32,8 @@ const ROUTE: Routes = [
     NbButtonGroupModule,
     NbCardModule,
     NbListModule,
-    NbThemeModule.forRoot({ name: 'dark' })
+    NbThemeModule.forRoot({ name: 'dark' }),
+    PageRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
