@@ -7,7 +7,11 @@ import { BoardComponent } from './board/board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, 
+  NbButtonGroupModule, NbCardModule, NbListModule,
+  NbUserModule, 
+  NbMenuModule,
+  NbMenuItem} from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { BottomComponent } from './bottom/bottom.component';
 import { HeaderComponent } from './header/header.component';
@@ -33,7 +37,9 @@ import { PageRoutingModule } from './page-routing.module';
     NbCardModule,
     NbListModule,
     NbThemeModule.forRoot({ name: 'dark' }),
-    PageRoutingModule
+    PageRoutingModule,
+    NbUserModule,
+    NbMenuModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
