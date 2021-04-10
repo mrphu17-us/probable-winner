@@ -3,41 +3,23 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-  <p>
-  <mat-form-field appearance="legacy">
-    <mat-label>Legacy form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field appearance="standard">
-    <mat-label>Standard form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field appearance="fill">
-    <mat-label>Fill form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field appearance="outline">
-    <mat-label>Outline form field</mat-label>
-    <input matInput placeholder="Placeholder">
-    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-    <mat-hint>Hint</mat-hint>
-  </mat-form-field>
-</p>
-    <router-outlet></router-outlet>
+  <nb-layout>
+    <nb-layout-header fixed>
+      <app-header></app-header>
+    </nb-layout-header>
+    <nb-layout-column>
+      <app-board></app-board>
+    </nb-layout-column>
+    <nb-layout-footer fixed>
+      <app-bottom></app-bottom>
+    </nb-layout-footer>
+  </nb-layout>
   `,
-  styles: [``]
+  styles: [`
+    .columns nb-layout-column {
+      padding: 1rem 1rem 0.75rem !important;
+    }
+  `]
 })
 export class AppComponent {
   title = 'frontend';

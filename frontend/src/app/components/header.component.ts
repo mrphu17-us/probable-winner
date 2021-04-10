@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-header',
   template: `
+    <p>
+      header works!
+    </p>
   `,
-  styles: [`
-  mat-grid-tile {
-    background: lightblue;
-  }`]
+  styles: [
+  ]
 })
-
-export class BoardComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
   constructor() { }
 

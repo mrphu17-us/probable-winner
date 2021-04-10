@@ -1,0 +1,38 @@
+<nb-layout>
+    <nb-layout-column>
+      <nb-card size="medium">
+        <nb-card-header>
+          TODO
+        </nb-card-header>
+        <nb-list>
+          <nb-list-item *ngFor="let fruit of fruits">
+            {{ fruit }}
+          </nb-list-item>
+        </nb-list>
+      </nb-card>
+    </nb-layout-column>
+    <nb-layout-column>
+      <nb-card size="medium">
+        <nb-card-header>
+          In Progress
+        </nb-card-header>
+        <nb-list>
+          <nb-list-item *ngFor="let fruit of fruits">
+            {{ fruit }}
+          </nb-list-item>
+        </nb-list>
+      </nb-card>
+    </nb-layout-column>
+    <nb-layout-column>
+      <nb-card size="medium">
+        <nb-card-header>
+          Done
+        </nb-card-header>
+        <nb-list>
+          <nb-list-item *ngFor="let fruit of fruits">
+            {{ fruit }}
+          </nb-list-item>
+        </nb-list>
+      </nb-card>
+    </nb-layout-column>
+  </nb-layout>
