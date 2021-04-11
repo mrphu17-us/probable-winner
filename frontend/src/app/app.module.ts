@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule,NbAlertModule, NbButtonModule, NbCheckboxModule, NbInputModule, NbDialogModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule,NbAlertModule, NbButtonModule, NbCheckboxModule, NbInputModule, NbDialogModule, NbIconModule } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { BottomComponent } from './bottom/bottom.component';
@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { RouterModule } from '@angular/router';
 import { NewCardComponent } from './board/new-card.component';
+import { UpdateCardComponent } from './board/update-card.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { NewCardComponent } from './board/new-card.component';
     LoginComponent,
     SignupComponent,
     ProjectComponent,
-    NewCardComponent
+    NewCardComponent,
+    UpdateCardComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,6 @@ import { NewCardComponent } from './board/new-card.component';
     NbButtonGroupModule,
     NbCardModule,
     NbListModule,
-    NbThemeModule.forRoot({ name: 'dark' }),
     PageRoutingModule,
     NbInputModule,
     FormsModule,
@@ -56,7 +57,8 @@ import { NewCardComponent } from './board/new-card.component';
     NbButtonModule,
     NbCheckboxModule,
     NbAuthModule,
-    NbDialogModule.forRoot({})
+    NbDialogModule.forRoot({}),
+    NbIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
