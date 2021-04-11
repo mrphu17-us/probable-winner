@@ -16,3 +16,9 @@ a {
   font-weight: 700;
   letter-spacing: 0.1em;
 }
+
+div {
+  width: 90vw;
+  margin: auto;
+  margin-left: 30px;
+}
