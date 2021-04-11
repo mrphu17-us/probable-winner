@@ -2,7 +2,9 @@ const express = require('express');
 require('dotenv').config();
 var cardRouter = require('./routers/cards');
 var boardRouter = require('./routers/boards');
-var userRouter = require('./routers/users');
+var authRouter = require('./routers/auth');
+var userRouter = require('./routers/user');
+var middleware = require('./routers/middleware')
 const mongoose = require("mongoose");
 let DB_HOST = process.env.DB_HOST;
 
@@ -12,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: false
 }));
+app.use('/api/*', middleware);
 
 //=================DB Start========================//
 mongoose.connect(DB_HOST, {
@@ -26,7 +29,8 @@ connection.once("open", function () {
 
 app.use('/api/cards', cardRouter);
 app.use('/api/boards', boardRouter);
-app.use('/api/users', userRouter);
+app.use('/auth', authRouter);
+app.use('/users', userRouter);
 
 
 app.get('/', (req, res, next) => {

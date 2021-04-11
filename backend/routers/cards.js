@@ -23,6 +23,18 @@ router.get('', (req, res) => {
     });
 })
 
+router.get('/:id', (req, res) => {
+    cards.findOne({
+        _id: req.params.id
+    }, function (err, result) {
+        if (err) {
+            res.json(err);
+        } else {
+            res.json(result);
+        }
+    });
+})
+
 router.delete('/:id', (req, res) => {
     cards.deleteOne({
         _id: req.params.id

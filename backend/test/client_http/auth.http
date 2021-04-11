@@ -1,0 +1,18 @@
+### Login
+POST http://localhost:3000/auth/login HTTP/1.1
+content-type: application/json
+
+{
+  "email": "pisun2@gmail.com",
+  "password": "123456"
+}
+
+### signup
+POST http://localhost:3000/auth/signup HTTP/1.1
+content-type: application/json
+
+{
+  "email": "pisun2@gmail.com",
+  "password": "123456",
+  "name": "Phu 1"
+}

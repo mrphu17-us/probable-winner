@@ -22,6 +22,18 @@ router.get('', (req, res) => {
     });
 })
 
+router.get('/:id', (req, res) => {
+    boards.findOne({
+        _id: req.params.id
+    }, function (err, result) {
+        if (err) {
+            res.json(err);
+        } else {
+            res.json(result);
+        }
+    });
+})
+
 router.delete('/:id', (req, res) => {
     boards.deleteOne({
         _id: req.params.id
