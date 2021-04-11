@@ -8,11 +8,11 @@
         </button>
       </nb-card-header>
       <nb-list nbInfiniteList listenWindowScroll>
-        <nb-list-item *ngFor="let fruit of fruits" (click)="updateCard('TODO')">
+        <nb-list-item *ngFor="let fruit of fruits">
           <div class="box">
             <div style="margin: 5px;">
               <span>this is title</span>
-              <button status="primary" size="tiny" nbButton (click)="addNewCard('TODO')">
+              <button status="primary" size="tiny" nbButton (click)="updateCard('TODO')">
                 <nb-icon icon="more-horizontal"></nb-icon>
               </button>
               <p style="color: black;">Created by: {{fruit.name}}
@@ -32,11 +32,11 @@
         </button>
       </nb-card-header>
       <nb-list>
-        <nb-list-item *ngFor="let fruit of fruits" (click)="updateCard('TODO')">
+        <nb-list-item *ngFor="let fruit of fruits">
           <div class="box">
             <div style="margin: 5px;">
               <span>this is title</span>
-              <button status="primary" size="tiny" nbButton (click)="addNewCard('TODO')">
+              <button status="primary" size="tiny" nbButton (click)="updateCard('TODO')">
                 <nb-icon icon="more-horizontal"></nb-icon>
               </button>
               <p style="color: black;">Created by: {{fruit.name}}
@@ -56,11 +56,11 @@
         </button>
       </nb-card-header>
       <nb-list>
-        <nb-list-item *ngFor="let fruit of fruits" (click)="updateCard('TODO')">
+        <nb-list-item *ngFor="let fruit of fruits">
           <div class="box">
             <div style="margin: 5px;">
               <span>this is title</span>
-              <button status="primary" size="tiny" nbButton (click)="addNewCard('TODO')">
+              <button status="primary" size="tiny" nbButton (click)="updateCard('TODO')">
                 <nb-icon icon="more-horizontal"></nb-icon>
               </button>
               <p style="color: black;">Created by: {{fruit.name}}
