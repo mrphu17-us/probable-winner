@@ -7,12 +7,20 @@ import { BoardComponent } from './board/board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule, NbButtonModule, NbInputModule } from '@nebular/theme';
+
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule,NbAlertModule, NbButtonModule, NbCheckboxModule, NbInputModule } from '@nebular/theme';
+
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { BottomComponent } from './bottom/bottom.component';
 import { HeaderComponent } from './header/header.component';
 import { PageRoutingModule } from './page-routing.module';
-import { ProjectComponent } from './project/project.component';
+
+import { LoginComponent } from './login/login.component';
+import {ProjectComponent} from './project/project.component';
+import { NbAuthModule } from '@nebular/auth';
+import { FormsModule } from '@angular/forms';
+import { SignupComponent } from './signup/signup.component';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +28,9 @@ import { ProjectComponent } from './project/project.component';
     BoardComponent,
     HeaderComponent,
     BottomComponent,
+
+    LoginComponent,
+    SignupComponent,
     ProjectComponent
   ],
   imports: [
@@ -34,9 +45,18 @@ import { ProjectComponent } from './project/project.component';
     NbButtonGroupModule,
     NbCardModule,
     NbListModule,
-    NbButtonModule,
+
+    NbThemeModule.forRoot({ name: 'dark' }),
+    PageRoutingModule,
+    NbInputModule,FormsModule,
+    RouterModule,
+    NbAlertModule,
     NbInputModule,
-    PageRoutingModule
+    NbButtonModule,
+    NbCheckboxModule,
+  
+    NbAuthModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
