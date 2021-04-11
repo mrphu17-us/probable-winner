@@ -1,0 +1,81 @@
+import { Component, OnInit } from '@angular/core';
+
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styles: [`
+  .sign {
+    padding-top: 25px;
+    color: #8C55AA;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+}
+.pass {
+width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+text-align: center;
+margin-bottom: 45px;
+}
+
+.em{
+  
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  text-align: center;
+  margin-bottom: 27px;
+  
+  
+}
+.submit {
+  cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 5%;
+    margin-right:5%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+.form{
+  background:rgba(#13232f,.9);
+  padding: 30px;
+  max-width:600px;
+  margin:30px auto;
+  border-radius:4px;
+  box-shadow:0 4px 10px 4px rgba(#13232f,.3);
+}
+
+
+`]
+ 
+})
+export class LoginComponent  implements OnInit {
+ 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+}
