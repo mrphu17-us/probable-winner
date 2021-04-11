@@ -9,7 +9,7 @@ import { ProjectComponent } from './project/project.component';
 
 
 const routes: Routes = [{
-  path: 'board',
+  path: 'board/:id',
   component: BoardComponent
 },
 {

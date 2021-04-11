@@ -2,13 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { RouterModule, Routes } from '@angular/router';
 import { BoardComponent } from './board/board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule,NbAlertModule, NbButtonModule, NbCheckboxModule, NbInputModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule,NbAlertModule, NbButtonModule, NbCheckboxModule, NbInputModule, NbDialogModule } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { BottomComponent } from './bottom/bottom.component';
@@ -20,6 +19,8 @@ import {ProjectComponent} from './project/project.component';
 import { NbAuthModule } from '@nebular/auth';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
+import { RouterModule } from '@angular/router';
+import { NewCardComponent } from './board/new-card.component';
 
 
 @NgModule({
@@ -28,10 +29,10 @@ import { SignupComponent } from './signup/signup.component';
     BoardComponent,
     HeaderComponent,
     BottomComponent,
-
     LoginComponent,
     SignupComponent,
-    ProjectComponent
+    ProjectComponent,
+    NewCardComponent
   ],
   imports: [
     BrowserModule,
@@ -45,18 +46,17 @@ import { SignupComponent } from './signup/signup.component';
     NbButtonGroupModule,
     NbCardModule,
     NbListModule,
-
     NbThemeModule.forRoot({ name: 'dark' }),
     PageRoutingModule,
-    NbInputModule,FormsModule,
+    NbInputModule,
+    FormsModule,
     RouterModule,
     NbAlertModule,
     NbInputModule,
     NbButtonModule,
     NbCheckboxModule,
-  
     NbAuthModule,
-
+    NbDialogModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
