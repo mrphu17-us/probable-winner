@@ -1,16 +1,10 @@
 const express = require('express');
-const MongoClient = require('mongodb').MongoClient;
 require('dotenv').config();
 var cardRouter = require('./routers/cards');
 var boardRouter = require('./routers/boards');
 var userRouter = require('./routers/users');
-
+const mongoose = require("mongoose");
 let DB_HOST = process.env.DB_HOST;
-const client = new MongoClient(DB_HOST, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
-let db;
 
 const app = express();
 
@@ -20,18 +14,14 @@ app.use(express.urlencoded({
 }));
 
 //=================DB Start========================//
-app.use((req, res, next) => {
-    if (!db) {
-        client.connect(function (err) {
-            db = client.db('mwa_db');
-            req.db = db.collection('users');
-            next();
-        });
-    } else {
-        req.db = db.collection('users');
-        next();
-    }
-})
+mongoose.connect(DB_HOST, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+});
+const connection = mongoose.connection;
+connection.once("open", function () {
+    console.log("MongoDB database connection established successfully");
+});
 //====================DB End=======================//
 
 app.use('/api/cards', cardRouter);
