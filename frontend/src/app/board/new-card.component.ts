@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-new-card',
   templateUrl: "./new-card.component.html",
-  styles: [``]
+  styles: [`nb-card {width: 30rem;}`]
 })
 
 export class NewCardComponent implements OnInit {

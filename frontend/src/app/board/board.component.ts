@@ -5,21 +5,7 @@ import { UpdateCardComponent } from './update-card.component';
 @Component({
   selector: 'app-board',
   templateUrl: "./board.component.html",
-  styles: [`
-    nb-layout-column {
-      padding: 1rem 1rem 0.75rem !important;
-    }
-
-    button { float: right; }
-
-    .box {
-      overflow: hidden; color: black; 
-      border-radius: 0.25rem; 
-      border: 0.0625rem solid #e4e9f2; 
-      padding: 5px; width: 100%;
-      background-color: #e4e9f2;
-    }
-  `]
+  styleUrls: ['./board.component.css']
 })
 
 export class BoardComponent implements OnInit {

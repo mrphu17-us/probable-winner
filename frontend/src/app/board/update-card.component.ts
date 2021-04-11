@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   selector: 'app-update-card',
   templateUrl: './update-card.component.html',
   styles: [
+    `nb-card {width: 30rem;}`
   ]
 })
 export class UpdateCardComponent implements OnInit {
