@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { BoardComponent } from './board/board.component';
-import { SigninComponent } from './signin/signin.component';
+import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProjectComponent } from './project/project.component';
 
@@ -13,8 +13,8 @@ const routes: Routes = [{
   component: BoardComponent
 },
 {
-  path: 'auth/signin',
-  component: SigninComponent
+  path: 'auth/login',
+  component: LoginComponent
 },
 {
   path: 'auth/signup',
