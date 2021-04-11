@@ -13,7 +13,7 @@ import { BottomComponent } from './bottom/bottom.component';
 import { HeaderComponent } from './header/header.component';
 import { PageRoutingModule } from './page-routing.module';
 import { LoginComponent } from './login/login.component';
-
+import {ProjectComponent} from './project/project.component';
 import { NbAuthModule } from '@nebular/auth';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
@@ -25,7 +25,8 @@ import { SignupComponent } from './signup/signup.component';
     HeaderComponent,
     BottomComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
