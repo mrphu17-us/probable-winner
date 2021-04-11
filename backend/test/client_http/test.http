@@ -1,2 +1,28 @@
-###
-GET http://localhost:3000
+### Get all boards
+GET http://localhost:3000/api/boards HTTP/1.1
+
+### Create Card
+POST http://localhost:3000/api/boards HTTP/1.1
+content-type: application/json
+
+{
+  "title": "demo project",
+  "description": "this should be fast"
+}
+
+### DELETE BOARD
+DELETE  http://localhost:3000/api/boards/607318cae6602dad5381bc47 HTTP/1.1
+
+### Get all cards
+GET http://localhost:3000/api/cards HTTP/1.1
+
+### Create Card
+POST http://localhost:3000/api/cards HTTP/1.1
+content-type: application/json
+
+{
+  "board_id": 1,
+  "title": "working on api",
+  "description": "this should be fast",
+  "status": "TODO"
+}
