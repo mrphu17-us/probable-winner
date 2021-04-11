@@ -28,7 +28,6 @@ import { SignupComponent } from './signup/signup.component';
     BoardComponent,
     HeaderComponent,
     BottomComponent,
-
     LoginComponent,
     SignupComponent,
     ProjectComponent
