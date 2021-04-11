@@ -1,0 +1,8 @@
+.columns nb-layout-column {
+  padding: 1rem 1rem 0.75rem !important;
+}
+
+nb-layout-column {
+  max-width: 1200px;
+  margin: auto;
+}

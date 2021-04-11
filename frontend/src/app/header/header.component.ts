@@ -4,8 +4,7 @@ import { NbMenuItem } from '@nebular/theme';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styles: [
-  ]
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
   items: NbMenuItem[] = [
