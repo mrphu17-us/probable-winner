@@ -6,6 +6,8 @@ import { BoardComponent } from './board/board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import {HTTP_INTERCEPTORS } from '@angular/common/http';
+import {AuthInterceptor} from '../interceptors/auth.interceptor';
 
 import {
   NbThemeModule,
@@ -37,6 +39,7 @@ import { SignupComponent } from './signup/signup.component';
 import { RouterModule } from '@angular/router';
 import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -76,12 +79,21 @@ import { UpdateCardComponent } from './board/update-card.component';
     NbIconModule,
     NbUserModule,
     NbTabsetModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
 
     // NB Tree Modules:
     NbTreeGridModule,
     NbBadgeModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
