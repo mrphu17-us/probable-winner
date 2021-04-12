@@ -1,12 +1,14 @@
 const express = require('express');
 require('dotenv').config();
+const mongoose = require("mongoose");
+const cors = require("cors");
+
+// local deps
 var cardRouter = require('./routers/cards');
 var boardRouter = require('./routers/boards');
 var authRouter = require('./routers/auth');
 var userRouter = require('./routers/user');
 var middleware = require('./routers/middleware');
-var cors = require('cors');
-const mongoose = require("mongoose");
 let DB_HOST = process.env.DB_HOST;
 
 const app = express();

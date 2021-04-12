@@ -23,7 +23,7 @@ import {
   NbUserModule,
   NbTabsetModule,
   NbTreeGridModule,
-  NbBadgeModule,
+  NbBadgeModule
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -57,8 +57,14 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     CommonModule,
+    HttpClientModule,
     ReactiveFormsModule,
+    PageRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    RouterModule,
+
+    // nebular modules
     NbThemeModule.forRoot({ name: 'dark' }),
     NbSidebarModule.forRoot(),
     NbLayoutModule,
@@ -66,10 +72,7 @@ import { HttpClientModule } from '@angular/common/http';
     NbButtonGroupModule,
     NbCardModule,
     NbListModule,
-    PageRoutingModule,
     NbInputModule,
-    FormsModule,
-    RouterModule,
     NbAlertModule,
     NbInputModule,
     NbButtonModule,
@@ -80,12 +83,10 @@ import { HttpClientModule } from '@angular/common/http';
     NbUserModule,
     HttpClientModule,
     NbTabsetModule,
-
-    // NB Tree Modules:
     NbTreeGridModule,
     NbBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
