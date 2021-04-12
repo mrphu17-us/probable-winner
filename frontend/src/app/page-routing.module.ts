@@ -9,26 +9,27 @@ import { ProjectListComponent } from './project-list/project-list.component';
 
 
 
-const routes: Routes = [{
-  path: 'board/:id',
-  component: BoardComponent
-},
-{
-  path: 'auth/login',
-  component: LoginComponent
-},
-{
-  path: 'auth/signup',
-  component: SignupComponent
-},
-{
-  path: 'projects/create',
-  component: ProjectComponent
-},
-{
-  path: 'projects/list',
-  component: ProjectListComponent
-}];
+const routes: Routes = [
+  {
+    path: 'board/:id',
+    component: BoardComponent
+  },
+  {
+    path: 'auth/login',
+    component: LoginComponent
+  },
+  {
+    path: 'auth/signup',
+    component: SignupComponent
+  },
+  {
+    path: 'projects/create',
+    component: ProjectComponent
+  },
+  {
+    path: 'projects/list',
+    component: ProjectListComponent
+  }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
