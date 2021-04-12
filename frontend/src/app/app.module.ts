@@ -81,9 +81,10 @@ import { HttpClientModule } from '@angular/common/http';
     NbDialogModule.forRoot({}),
     NbIconModule,
     NbUserModule,
+    HttpClientModule,
     NbTabsetModule,
     NbTreeGridModule,
-    NbBadgeModule
+    NbBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

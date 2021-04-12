@@ -4,7 +4,7 @@
 GET http://localhost:3000/api/boards HTTP/1.1
 Authorization: {{authToken}}
 
-### Create board
+### Create Card
 POST http://localhost:3000/api/boards HTTP/1.1
 Authorization: {{authToken}}
 content-type: application/json

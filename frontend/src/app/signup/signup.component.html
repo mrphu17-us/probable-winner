@@ -1,3 +1,4 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
 <div class="form">
 <nb-layout>
     <nb-layout-column>
@@ -6,13 +7,14 @@
             <p class="sign" align="center">Sign Up</p>
         </nb-card-header>
         <label align="left">Username</label>
-        <input type="text" class="em" nbInput fullWidth status="primary" fieldSize="medium" placeholder="Username">
+        <input type="text" class="em" nbInput fullWidth status="primary" formControlName="user_name" fieldSize="medium" placeholder="Username">
         <label align="left">Email</label>
-        <input type="email" class="em" nbInput fullWidth status="primary" fieldSize="medium" placeholder="Email">
+        <input type="email" class="em" nbInput fullWidth status="primary" formControlName="email_name" fieldSize="medium" placeholder="Email">
         <label align="left">Password</label>
-        <input type="password" class="pass" nbInput fullWidth status="primary" fieldSize="medium" placeholder="Password">
-        <button nbButton class="submit" status="success" size="small" shape="semi-round">Login</button>
+        <input type="password" class="pass" nbInput fullWidth status="primary" formControlName="password_field" fieldSize="medium" placeholder="Password">
+        <button nbButton class="submit" [disabled]="!myForm.valid" status="success" size="small" shape="semi-round">Login</button>
     </nb-card>
     </nb-layout-column>
 </nb-layout>
 </div>
+</form>
