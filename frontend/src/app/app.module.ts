@@ -23,7 +23,9 @@ import {
   NbDialogModule,
   NbIconModule,
   NbUserModule,
-  NbTabsetModule, NbTreeGridModule, NbBadgeModule
+  NbTabsetModule,
+  NbTreeGridModule,
+  NbBadgeModule
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -41,6 +43,7 @@ import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
 import {HttpClientModule} from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,8 +60,14 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     CommonModule,
+    HttpClientModule,
     ReactiveFormsModule,
+    PageRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    RouterModule,
+
+    // nebular modules
     NbThemeModule.forRoot({ name: 'dark' }),
     NbSidebarModule.forRoot(),
     NbLayoutModule,
@@ -66,10 +75,7 @@ import {HttpClientModule} from '@angular/common/http';
     NbButtonGroupModule,
     NbCardModule,
     NbListModule,
-    PageRoutingModule,
     NbInputModule,
-    FormsModule,
-    RouterModule,
     NbAlertModule,
     NbInputModule,
     NbButtonModule,
@@ -78,14 +84,16 @@ import {HttpClientModule} from '@angular/common/http';
     NbDialogModule.forRoot({}),
     NbIconModule,
     NbUserModule,
+    HttpClientModule,
     NbTabsetModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
 
     // NB Tree Modules:
+
     NbTreeGridModule,
-    NbBadgeModule
+    NbBadgeModule,
   ],
   providers: [
     {

@@ -1,4 +1,4 @@
-<form [formGroup]="myForm">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
   <nb-card size="small" status="info">
     <nb-card-header>Create a New Card</nb-card-header>
     <nb-card-body>
@@ -11,7 +11,8 @@
       </div>
     </nb-card-body>
     <nb-card-footer>
-      <button nbButton [disabled]="!myForm.valid">Create</button>
+      <button status="success" nbButton [disabled]="!myForm.valid">Create</button>
+      <button style="margin-left: 20px;" nbButton (click)="backToHome()">Cancel</button>
     </nb-card-footer>
   </nb-card>
 </form>

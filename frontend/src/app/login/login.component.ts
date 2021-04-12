@@ -9,8 +9,8 @@ import { AuthServiceService } from '../services/auth-service.service';
   templateUrl: './login.component.html',
   styleUrls:['./login.component.css']
 })
-export class LoginComponent  implements OnInit {
-  myForm:FormGroup;
+export class LoginComponent implements OnInit {
+  myForm: FormGroup;
 
   constructor( public fb: FormBuilder,
     public authService: AuthServiceService,

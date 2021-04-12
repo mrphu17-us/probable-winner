@@ -40,6 +40,9 @@ card.pre('save', function (next) {
     if (!this.created_at) {
         this.created_at = currentDate;
     }
+    if (!this.status) {
+        this.status = 'TODO';
+    }
     next();
 })
 
