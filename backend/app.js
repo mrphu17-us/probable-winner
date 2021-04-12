@@ -4,7 +4,8 @@ var cardRouter = require('./routers/cards');
 var boardRouter = require('./routers/boards');
 var authRouter = require('./routers/auth');
 var userRouter = require('./routers/user');
-var middleware = require('./routers/middleware')
+var middleware = require('./routers/middleware');
+var cors = require('cors');
 const mongoose = require("mongoose");
 let DB_HOST = process.env.DB_HOST;
 
@@ -14,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({
     extended: false
 }));
+app.use(cors());
 app.use('/api/*', middleware);
 
 //=================DB Start========================//

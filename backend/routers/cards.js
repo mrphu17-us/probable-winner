@@ -19,7 +19,8 @@ router.post('', (req, res) => {
 router.get('/b/:board_id', (req, res) => {
     cards.find({
         'board_id': req.params.board_id,
-        'created_by': req.user.email
+        // 'created_by': req.user.email,
+        'status': req.query.status
     }, function (err, result) {
         if (err) {
             res.json(err);

@@ -16,6 +16,10 @@ button {
   background-color: #e4e9f2;
 }
 
+.box span {
+  font-weight: 700;
+}
+
 nb-layout {
   max-width: 800px;
 }

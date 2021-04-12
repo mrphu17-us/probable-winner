@@ -36,6 +36,7 @@ import { SignupComponent } from './signup/signup.component';
 import { RouterModule } from '@angular/router';
 import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { UpdateCardComponent } from './board/update-card.component';
     NbDialogModule.forRoot({}),
     NbIconModule,
     NbUserModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
