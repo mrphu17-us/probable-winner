@@ -8,11 +8,13 @@ import { ProjectComponent } from './project/project.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: 'board/:id',
     component: BoardComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'auth/login',
@@ -25,18 +27,26 @@ const routes: Routes = [
   {
     path: 'projects/create',
     component: ProjectComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'cards/:board_id/create',
     component: NewCardComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'cards/:board_id/:card_id/update',
     component: UpdateCardComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'projects/list',
     component: ProjectListComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: '**',
+    redirectTo: 'auth/login',
   },
   {
     path: '',

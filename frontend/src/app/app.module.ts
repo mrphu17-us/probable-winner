@@ -6,6 +6,8 @@ import { BoardComponent } from './board/board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from '../interceptors/auth.interceptor';
 
 import {
   NbThemeModule,
@@ -23,7 +25,7 @@ import {
   NbUserModule,
   NbTabsetModule,
   NbTreeGridModule,
-  NbBadgeModule
+  NbBadgeModule,
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -84,10 +86,22 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     NbIconModule,
     NbUserModule,
     NbTabsetModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+    // NB Tree Modules:
+
     NbTreeGridModule,
     NbBadgeModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

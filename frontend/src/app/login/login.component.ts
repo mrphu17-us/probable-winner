@@ -1,32 +1,39 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthServiceService } from '../services/auth-service.service';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html'
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   myForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) {
-    this.myForm = this.formBuilder.group({
-      email_name: ['', [Validators.required,]],
-      password_field: ['', [Validators.required,]]
-    })
-    this.myForm.statusChanges.subscribe((data: any) => console.log(data));
+
+  constructor(
+    public fb: FormBuilder,
+    public authService: AuthServiceService,
+    public router: Router
+  ) {
+    this.myForm = this.fb.group({
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
   }
 
-  onSubmit(): void {
-    console.log("click Submit")
+  onSubmit() {
+    this.authService.signIn(this.myForm.value).subscribe((data) => {
+      let token = data.token;
+      localStorage.setItem('access_token', token);
+      this.router.navigate(['projects', 'list']);
+    });
   }
 
-  ngOnInit(): void {
-  }
-  exampleValidator(control: FormControl) {
-    if (control.value === 'Board Name') {
-      return "c'mon! tooo simple name"
-    }
-
-    return null
-  }
-
+  ngOnInit(): void {}
 }
