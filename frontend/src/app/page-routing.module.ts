@@ -6,27 +6,27 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProjectComponent } from './project/project.component';
 
-
-
-const routes: Routes = [{
-  path: 'board/:id',
-  component: BoardComponent
-},
-{
-  path: 'auth/login',
-  component: LoginComponent
-},
-{
-  path: 'auth/signup',
-  component: SignupComponent
-},
-{
-  path: 'projects/create',
-  component: ProjectComponent
-}];
+const routes: Routes = [
+  {
+    path: 'board/:id',
+    component: BoardComponent,
+  },
+  {
+    path: 'auth/login',
+    component: LoginComponent,
+  },
+  {
+    path: 'auth/signup',
+    component: SignupComponent,
+  },
+  {
+    path: 'projects/create',
+    component: ProjectComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class PageRoutingModule { }
+export class PageRoutingModule {}

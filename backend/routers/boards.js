@@ -3,7 +3,12 @@ var router = express.Router();
 const boards = require("../models/board");
 
 router.post('', (req, res) => {
-    boards.create(req.body, function (err, result) {
+    let created_by = req.user.email;
+
+    boards.create({
+        ...req.body,
+        created_by: created_by
+    }, function (err, result) {
         if (err) {
             res.json(err);
         } else {
@@ -13,7 +18,9 @@ router.post('', (req, res) => {
 })
 
 router.get('', (req, res) => {
-    boards.find({}, function (err, result) {
+    boards.find({
+        created_by: res.user.email
+    }, function (err, result) {
         if (err) {
             res.json(err);
         } else {
@@ -36,7 +43,8 @@ router.get('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     boards.deleteOne({
-        _id: req.params.id
+        _id: req.params.id,
+        created_by: res.user.email
     }, function (err) {
         if (err) {
             res.json(err);
