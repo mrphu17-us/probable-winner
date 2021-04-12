@@ -5,6 +5,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { AuthServiceService } from '../services/auth-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -14,26 +16,26 @@ import {
 export class SignupComponent implements OnInit {
   myForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
-    this.myForm = this.formBuilder.group({
+  constructor(
+    public fb: FormBuilder,
+    public authService: AuthServiceService,
+    public router: Router
+  ) {
+    this.myForm = this.fb.group({
       user_name: ['', [Validators.required]],
       email_name: ['', [Validators.required]],
       password_field: ['', [Validators.required]],
     });
-    this.myForm.statusChanges.subscribe((data: any) => console.log(data));
   }
 
   ngOnInit(): void {}
 
   onSubmit(): void {
-    console.log('click Submit');
-  }
-
-  exampleValidator(control: FormControl) {
-    if (control.value === 'Board Name') {
-      return "c'mon! tooo simple name";
-    }
-
-    return null;
+    this.authService.signUp(this.myForm.value).subscribe((res) => {
+      if (res.result) {
+        this.myForm.reset();
+        this.router.navigate(['auth/login']);
+      }
+    });
   }
 }

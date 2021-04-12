@@ -6,6 +6,8 @@ import { BoardComponent } from './board/board.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from '../interceptors/auth.interceptor';
 
 import {
   NbThemeModule,
@@ -21,15 +23,18 @@ import {
   NbDialogModule,
   NbIconModule,
   NbUserModule,
+  NbTabsetModule,
+  NbTreeGridModule,
+  NbBadgeModule,
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { BottomComponent } from './bottom/bottom.component';
 import { HeaderComponent } from './header/header.component';
 import { PageRoutingModule } from './page-routing.module';
-
-import { LoginComponent } from './login/login.component';
 import { ProjectComponent } from './project/project.component';
+import { ProjectListComponent } from './project-list/project-list.component';
+import { LoginComponent } from './login/login.component';
 import { NbAuthModule } from '@nebular/auth';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
@@ -44,6 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
     BoardComponent,
     HeaderComponent,
     BottomComponent,
+    ProjectListComponent,
     LoginComponent,
     SignupComponent,
     ProjectComponent,
@@ -53,8 +59,14 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     CommonModule,
+    HttpClientModule,
     ReactiveFormsModule,
+    PageRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    RouterModule,
+
+    // nebular modules
     NbThemeModule.forRoot({ name: 'dark' }),
     NbSidebarModule.forRoot(),
     NbLayoutModule,
@@ -62,10 +74,7 @@ import { HttpClientModule } from '@angular/common/http';
     NbButtonGroupModule,
     NbCardModule,
     NbListModule,
-    PageRoutingModule,
     NbInputModule,
-    FormsModule,
-    RouterModule,
     NbAlertModule,
     NbInputModule,
     NbButtonModule,
@@ -74,9 +83,23 @@ import { HttpClientModule } from '@angular/common/http';
     NbDialogModule.forRoot({}),
     NbIconModule,
     NbUserModule,
+    NbTabsetModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+
+    // NB Tree Modules:
+
+    NbTreeGridModule,
+    NbBadgeModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

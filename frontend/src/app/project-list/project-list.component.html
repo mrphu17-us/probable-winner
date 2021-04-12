@@ -1,0 +1,64 @@
+<nb-card size="giant" status="danger">
+    <nb-card-body>
+        <nb-tabset>
+            <nb-tab
+                tabTitle="{{ (boards$ | async)?.length }} Open"
+                tabIcon="activity-outline"
+            >
+                <nb-list>
+                    <nb-list-item
+                        *ngFor="let board of boards"
+                        (click)="listClicked(board)"
+                        style="position: relative"
+                    >
+                        <nb-user
+                            [name]="board.name"
+                            [title]="board.title"
+                            picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG"
+                        >
+                        </nb-user>
+
+                        <div style="margin-left: 3%">
+                            {{ board.description }}
+                        </div>
+
+                        <nb-badge
+                            text="private"
+                            status="basic"
+                            position="right"
+                        ></nb-badge>
+                    </nb-list-item>
+                </nb-list>
+            </nb-tab>
+            <nb-tab
+                tabTitle="{{ closed_boards.length }} Closed"
+                tabIcon="done-all-outline"
+            >
+                <nb-list>
+                    <nb-list-item
+                        *ngFor="let board of closed_boards"
+                        (click)="listClicked(board)"
+                        style="position: relative; cursor: pointer"
+                    >
+                        <nb-user
+                            [name]="board.name"
+                            [title]="board.title"
+                            picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG"
+                        >
+                        </nb-user>
+
+                        <div style="margin-left: 3%">
+                            {{ board.description }}
+                        </div>
+
+                        <nb-badge
+                            text="private"
+                            status="basic"
+                            position="right"
+                        ></nb-badge>
+                    </nb-list-item>
+                </nb-list>
+            </nb-tab>
+        </nb-tabset>
+    </nb-card-body>
+</nb-card>

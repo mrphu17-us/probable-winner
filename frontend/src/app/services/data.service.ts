@@ -1,20 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { baseUrl } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DataService {
-  header: any = {
-    Authorization:
-      'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgyMzk3MTl9.T7p1YLWdN7nPiiLkuTrlsG6pzGXH4RQLzERWbeVmoY_iqlFT2o_R89TK6_kDNAtrpfNVPnchzALk_Lny7UEAi11AYi7KmP0rzBLkPCiqkVbZ1lSz7-TDYzJwt2B-1ENNzCE_yVPQOEFZvi30y_vW8SJ7FUUt3J1Nw7fNd-tA02M',
-    'content-type': 'application/json',
-  };
+  private token: String;
+
   constructor(private http: HttpClient) {}
 
-  getCards() {
-    return this.http.get('http://localhost:3000/api/cards', {
-      headers: this.header,
-    });
+  getCards(board_id, status: String) {
+    return this.http.get(
+      `${baseUrl}api/cards/b/` + board_id + '?status=' + status
+    );
+  }
+
+  getCard(card_id) {
+    return this.http.get(`${baseUrl}api/cards/` + card_id);
+  }
+
+  deleteCard(card_id) {
+    return this.http.delete(`${baseUrl}api/cards/` + card_id);
+  }
+
+  createCard(data: any) {
+    return this.http.post(`${baseUrl}api/cards`, data);
+  }
+
+  getBoards() {
+    return this.http.get(`${baseUrl}api/boards`);
   }
 }
