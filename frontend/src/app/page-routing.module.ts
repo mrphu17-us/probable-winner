@@ -5,28 +5,34 @@ import { BoardComponent } from './board/board.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProjectComponent } from './project/project.component';
+import { ProjectListComponent } from './project-list/project-list.component';
+
+
 
 const routes: Routes = [
   {
     path: 'board/:id',
-    component: BoardComponent,
+    component: BoardComponent
   },
   {
     path: 'auth/login',
-    component: LoginComponent,
+    component: LoginComponent
   },
   {
     path: 'auth/signup',
-    component: SignupComponent,
+    component: SignupComponent
   },
   {
     path: 'projects/create',
-    component: ProjectComponent,
+    component: ProjectComponent
   },
-];
+  {
+    path: 'projects/list',
+    component: ProjectListComponent
+  }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class PageRoutingModule {}
+export class PageRoutingModule { }

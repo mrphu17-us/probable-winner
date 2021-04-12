@@ -21,15 +21,16 @@ import {
   NbDialogModule,
   NbIconModule,
   NbUserModule,
+  NbTabsetModule, NbTreeGridModule, NbBadgeModule
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { BottomComponent } from './bottom/bottom.component';
 import { HeaderComponent } from './header/header.component';
 import { PageRoutingModule } from './page-routing.module';
-
-import { LoginComponent } from './login/login.component';
 import { ProjectComponent } from './project/project.component';
+import { ProjectListComponent } from './project-list/project-list.component';
+import { LoginComponent } from './login/login.component';
 import { NbAuthModule } from '@nebular/auth';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
@@ -43,6 +44,7 @@ import { UpdateCardComponent } from './board/update-card.component';
     BoardComponent,
     HeaderComponent,
     BottomComponent,
+    ProjectListComponent,
     LoginComponent,
     SignupComponent,
     ProjectComponent,
@@ -73,8 +75,13 @@ import { UpdateCardComponent } from './board/update-card.component';
     NbDialogModule.forRoot({}),
     NbIconModule,
     NbUserModule,
+    NbTabsetModule,
+
+    // NB Tree Modules:
+    NbTreeGridModule,
+    NbBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
