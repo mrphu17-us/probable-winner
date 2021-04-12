@@ -1,38 +1,74 @@
-<nb-layout>
-    <nb-layout-column>
-      <nb-card size="medium">
-        <nb-card-header>
-          TODO
-        </nb-card-header>
-        <nb-list>
-          <nb-list-item *ngFor="let fruit of fruits">
-            {{ fruit }}
-          </nb-list-item>
-        </nb-list>
-      </nb-card>
-    </nb-layout-column>
-    <nb-layout-column>
-      <nb-card size="medium">
-        <nb-card-header>
-          In Progress
-        </nb-card-header>
-        <nb-list>
-          <nb-list-item *ngFor="let fruit of fruits">
-            {{ fruit }}
-          </nb-list-item>
-        </nb-list>
-      </nb-card>
-    </nb-layout-column>
-    <nb-layout-column>
-      <nb-card size="medium">
-        <nb-card-header>
-          Done
-        </nb-card-header>
-        <nb-list>
-          <nb-list-item *ngFor="let fruit of fruits">
-            {{ fruit }}
-          </nb-list-item>
-        </nb-list>
-      </nb-card>
-    </nb-layout-column>
-  </nb-layout>
+<nb-layout style="background-color: aqua !important;">
+  <nb-layout-column>
+    <nb-card status="warning">
+      <nb-card-header>
+        TODO
+        <button status="primary" size="tiny" nbButton (click)="addNewCard('TODO')">
+          <nb-icon icon="plus"></nb-icon>
+        </button>
+      </nb-card-header>
+      <nb-list nbInfiniteList listenWindowScroll>
+        <nb-list-item *ngFor="let fruit of fruits">
+          <div class="box">
+            <div style="margin: 5px;">
+              <span>this is title</span>
+              <button status="primary" size="tiny" nbButton (click)="updateCard('TODO')">
+                <nb-icon icon="more-horizontal"></nb-icon>
+              </button>
+              <p style="color: black;">Created by: {{fruit.name}}
+              <p>
+            </div>
+          </div>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </nb-layout-column>
+  <nb-layout-column>
+    <nb-card status="danger">
+      <nb-card-header>
+        IN PROGRESS
+        <button status="primary" size="tiny" nbButton (click)="addNewCard('TODO')">
+          <nb-icon icon="plus"></nb-icon>
+        </button>
+      </nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let fruit of fruits">
+          <div class="box">
+            <div style="margin: 5px;">
+              <span>this is title</span>
+              <button status="primary" size="tiny" nbButton (click)="updateCard('TODO')">
+                <nb-icon icon="more-horizontal"></nb-icon>
+              </button>
+              <p style="color: black;">Created by: {{fruit.name}}
+              <p>
+            </div>
+          </div>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </nb-layout-column>
+  <nb-layout-column>
+    <nb-card status="success">
+      <nb-card-header>
+        COMPLETE
+        <button status="primary" size="tiny" nbButton (click)="addNewCard('TODO')">
+          <nb-icon icon="plus"></nb-icon>
+        </button>
+      </nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let fruit of fruits">
+          <div class="box">
+            <div style="margin: 5px;">
+              <span>this is title</span>
+              <button status="primary" size="tiny" nbButton (click)="updateCard('TODO')">
+                <nb-icon icon="more-horizontal"></nb-icon>
+              </button>
+              <p style="color: black;">Created by: {{fruit.name}}
+              <p>
+            </div>
+          </div>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>
