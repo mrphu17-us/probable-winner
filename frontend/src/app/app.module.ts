@@ -7,15 +7,30 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule,NbAlertModule, NbButtonModule, NbCheckboxModule, NbInputModule, NbDialogModule, NbIconModule, NbUserModule } from '@nebular/theme';
+import {
+  NbThemeModule,
+  NbLayoutModule,
+  NbSidebarModule,
+  NbButtonGroupModule,
+  NbCardModule,
+  NbListModule,
+  NbAlertModule,
+  NbButtonModule,
+  NbCheckboxModule,
+  NbInputModule,
+  NbDialogModule,
+  NbIconModule,
+  NbUserModule,
+  NbTabsetModule, NbTreeGridModule, NbBadgeModule
+} from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { BottomComponent } from './bottom/bottom.component';
 import { HeaderComponent } from './header/header.component';
 import { PageRoutingModule } from './page-routing.module';
-
+import { ProjectComponent } from './project/project.component';
+import { ProjectListComponent } from './project-list/project-list.component';
 import { LoginComponent } from './login/login.component';
-import {ProjectComponent} from './project/project.component';
 import { NbAuthModule } from '@nebular/auth';
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
@@ -23,18 +38,18 @@ import { RouterModule } from '@angular/router';
 import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
     BoardComponent,
     HeaderComponent,
     BottomComponent,
+    ProjectListComponent,
     LoginComponent,
     SignupComponent,
     ProjectComponent,
     NewCardComponent,
-    UpdateCardComponent
+    UpdateCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,9 +74,14 @@ import { UpdateCardComponent } from './board/update-card.component';
     NbAuthModule,
     NbDialogModule.forRoot({}),
     NbIconModule,
-    NbUserModule
+    NbUserModule,
+    NbTabsetModule,
+
+    // NB Tree Modules:
+    NbTreeGridModule,
+    NbBadgeModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

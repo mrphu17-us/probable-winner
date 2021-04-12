@@ -5,7 +5,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
- 
 })
 export class LoginComponent  implements OnInit {
   myForm:FormGroup;
@@ -24,7 +23,7 @@ export class LoginComponent  implements OnInit {
   ngOnInit(): void {
   }
   exampleValidator(control: FormControl) {
-    if (control.value === 'Board Name') {
+    if (control.value === 'Login Name') {
       return "c'mon! tooo simple name"
     }
 
