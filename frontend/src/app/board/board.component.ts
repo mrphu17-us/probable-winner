@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NbDialogService } from '@nebular/theme';
 import { Observable, Subscription } from 'rxjs';
 import { DataService } from '../services/data.service';
-import { NewCardComponent } from './new-card.component';
-import { UpdateCardComponent } from './update-card.component';
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -18,15 +16,18 @@ export class BoardComponent implements OnInit {
   public board_id: String;
 
   constructor(
-    private dialogService: NbDialogService,
     private dataService: DataService,
-    private activeRoute: ActivatedRoute
+    private activeRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.subscription = activeRoute.params.subscribe(
       (params: any) => (this.board_id = params['id'])
     );
   }
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
   ngOnInit(): void {
     this.cardsTODO$ = this.dataService.getCards(this.board_id, 'TODO');
     this.cardsInprogress$ = this.dataService.getCards(
@@ -37,18 +38,10 @@ export class BoardComponent implements OnInit {
   }
 
   addNewCard(type: string) {
-    this.dialogService.open(NewCardComponent, {
-      context: {
-        // title: 'This is a title passed to the dialog component',
-      },
-    });
+    this.router.navigate(['cards', this.board_id, 'create']);
   }
 
   updateCard(id: string) {
-    this.dialogService.open(UpdateCardComponent, {
-      context: {
-        // title: 'This is a title passed to the dialog component',
-      },
-    });
+    this.router.navigate(['cards', this.board_id, id, 'update']);
   }
 }

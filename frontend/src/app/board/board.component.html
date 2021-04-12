@@ -12,7 +12,7 @@
           <div class="box">
             <div style="margin: 5px;">
               <span style="font-weight: bold;">{{card.title}}</span>
-              <button status="primary" size="tiny" nbButton (click)="updateCard('TODO')">
+              <button status="primary" size="tiny" nbButton (click)="updateCard(card._id)">
                 <nb-icon icon="more-horizontal"></nb-icon>
               </button>
               <p style="color: black;">

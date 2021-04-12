@@ -12,6 +12,7 @@
     </nb-card-body>
     <nb-card-footer>
       <button nbButton [disabled]="!myForm.valid">Update</button>
+      <button style="margin-left: 10px;" status="danger" nbButton (click)="onDelete()">Delete</button>
     </nb-card-footer>
   </nb-card>
 </form>
