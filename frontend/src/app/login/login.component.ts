@@ -3,18 +3,19 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-login',
+  templateUrl: './login.component.html'
 })
-export class LoginComponent  implements OnInit {
-  myForm:FormGroup;
-  constructor(private formBuilder:FormBuilder) {
+export class LoginComponent implements OnInit {
+  myForm: FormGroup;
+  constructor(private formBuilder: FormBuilder) {
     this.myForm = this.formBuilder.group({
-      email_name:['',[Validators.required,]],
-      password_field:['',[Validators.required,]]
+      email_name: ['', [Validators.required,]],
+      password_field: ['', [Validators.required,]]
     })
     this.myForm.statusChanges.subscribe((data: any) => console.log(data));
-   }
+  }
 
-   onSubmit(): void {
+  onSubmit(): void {
     console.log("click Submit")
   }
 
