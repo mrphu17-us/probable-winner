@@ -13,6 +13,7 @@ import { BottomComponent } from './bottom/bottom.component';
 import { HeaderComponent } from './header/header.component';
 import { PageRoutingModule } from './page-routing.module';
 import { ProjectComponent } from './project/project.component';
+import { ProjectListComponent } from './project-list/project-list.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProjectComponent } from './project/project.component';
     BoardComponent,
     HeaderComponent,
     BottomComponent,
-    ProjectComponent
+    ProjectComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,
