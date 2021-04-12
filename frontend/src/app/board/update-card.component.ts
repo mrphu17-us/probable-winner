@@ -40,7 +40,7 @@ export class UpdateCardComponent implements OnInit {
       board_id: this.board_id,
       ...this.myForm.value,
     };
-    this.dataService.createCard(data).subscribe((data) => {
+    this.dataService.updateCard(data).subscribe((data) => {
       this.router.navigate(['board', this.board_id]);
     });
   }

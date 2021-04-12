@@ -43,6 +43,12 @@ export class DataService {
     });
   }
 
+  updateCard(card_id: String, data: any) {
+    return this.http.post('http://localhost:3000/api/cards/' + card_id, data, {
+      headers: this.header,
+    });
+  }
+
   getBoards() {
     return this.http.get('http://localhost:3000/api/boards', {
       headers: this.header,
