@@ -12,7 +12,7 @@ export class DataService {
     'content-type': 'application/json',
   };
   constructor(private http: HttpClient) {
-    this.token = localStorage.getItem('toekn');
+    this.token = localStorage.getItem('token');
     if (this.token != null) this.header.Authorization = this.token;
   }
 
@@ -23,5 +23,23 @@ export class DataService {
         headers: this.header,
       }
     );
+  }
+
+  getCard(card_id) {
+    return this.http.get('http://localhost:3000/api/cards/' + card_id, {
+      headers: this.header,
+    });
+  }
+
+  deleteCard(card_id) {
+    return this.http.delete('http://localhost:3000/api/cards/' + card_id, {
+      headers: this.header,
+    });
+  }
+
+  createCard(data: any) {
+    return this.http.post('http://localhost:3000/api/cards', data, {
+      headers: this.header,
+    });
   }
 }

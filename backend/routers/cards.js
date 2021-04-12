@@ -6,7 +6,7 @@ const cards = require("../models/card");
 router.post('', (req, res) => {
     cards.create({
         ...req.body,
-        created_by: res.user.email
+        created_by: req.user.email
     }, function (err, result) {
         if (err) {
             res.json(err);
