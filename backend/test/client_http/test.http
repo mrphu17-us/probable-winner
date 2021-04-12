@@ -1,10 +1,12 @@
+@authToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgyNjEyMjl9.EuoxCpBHL1mLgqmnvO8oAGe0DBh_COAc6SEE5Hhm9--R_wWhGLyB_aQ63KZcXvEUPAjEZ87w2azwaVsETLATvR5YQgIOIjJ2OkhYyq3pusHMx8ex5wdDTLQK890cTaOaWp7By3nUI1yzLABjRSpHR2q1ivXAQa7wESwMIaTIsNU
+
 ### Get all boards
 GET http://localhost:3000/api/boards HTTP/1.1
-Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgyMzk3MTl9.T7p1YLWdN7nPiiLkuTrlsG6pzGXH4RQLzERWbeVmoY_iqlFT2o_R89TK6_kDNAtrpfNVPnchzALk_Lny7UEAi11AYi7KmP0rzBLkPCiqkVbZ1lSz7-TDYzJwt2B-1ENNzCE_yVPQOEFZvi30y_vW8SJ7FUUt3J1Nw7fNd-tA02M
+Authorization: {{authToken}}
 
 ### Create board
 POST http://localhost:3000/api/boards HTTP/1.1
-Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgyMzk3MTl9.T7p1YLWdN7nPiiLkuTrlsG6pzGXH4RQLzERWbeVmoY_iqlFT2o_R89TK6_kDNAtrpfNVPnchzALk_Lny7UEAi11AYi7KmP0rzBLkPCiqkVbZ1lSz7-TDYzJwt2B-1ENNzCE_yVPQOEFZvi30y_vW8SJ7FUUt3J1Nw7fNd-tA02M
+Authorization: {{authToken}}
 content-type: application/json
 
 {
@@ -14,19 +16,19 @@ content-type: application/json
 
 ### get detail
 GET http://localhost:3000/api/boards/607318cbe6602dad5381bc48 HTTP/1.1
-Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgxNzExODd9.wWuglF3fr2kYNTTluiKnae3DW3jaLF9vqV3TSWP6d33II9nAV9xF9PzkgP4R4tGKDQeSL-K9rdgXId6uiQByE190CF3TZ6FB5VfEeFgBsCqCOT0rf_uLXbpzWoIxf2OAufthOF53Q9XIfKMcHnLCwVi01hTE2VBX1bfIWyKD5Ms
+Authorization: {{authToken}}
 
 ### DELETE BOARD
 DELETE  http://localhost:3000/api/boards/607318cae6602dad5381bc47 HTTP/1.1
-Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgxNzExODd9.wWuglF3fr2kYNTTluiKnae3DW3jaLF9vqV3TSWP6d33II9nAV9xF9PzkgP4R4tGKDQeSL-K9rdgXId6uiQByE190CF3TZ6FB5VfEeFgBsCqCOT0rf_uLXbpzWoIxf2OAufthOF53Q9XIfKMcHnLCwVi01hTE2VBX1bfIWyKD5Ms
+Authorization: {{authToken}}
 
 ### Get all cards
 GET http://localhost:3000/api/cards HTTP/1.1
-Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgxNzExODd9.wWuglF3fr2kYNTTluiKnae3DW3jaLF9vqV3TSWP6d33II9nAV9xF9PzkgP4R4tGKDQeSL-K9rdgXId6uiQByE190CF3TZ6FB5VfEeFgBsCqCOT0rf_uLXbpzWoIxf2OAufthOF53Q9XIfKMcHnLCwVi01hTE2VBX1bfIWyKD5Ms
+Authorization: {{authToken}}
 
 ### Create Card
 POST http://localhost:3000/api/cards HTTP/1.1
-Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgxNzExODd9.wWuglF3fr2kYNTTluiKnae3DW3jaLF9vqV3TSWP6d33II9nAV9xF9PzkgP4R4tGKDQeSL-K9rdgXId6uiQByE190CF3TZ6FB5VfEeFgBsCqCOT0rf_uLXbpzWoIxf2OAufthOF53Q9XIfKMcHnLCwVi01hTE2VBX1bfIWyKD5Ms
+Authorization: {{authToken}}
 content-type: application/json
 
 {
@@ -38,4 +40,4 @@ content-type: application/json
 
 ### Find card by id
 GET http://localhost:3000/api/cards/6073248a226090b9e92ad2d1 HTTP/1.1
-Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBpc3VuMiIsInBhc3N3b3JkIjoiJDJiJDEwJG55cWQ1dlJ5UG14bjh4cVByb2pyaC5ESTNjNUJLbVBWWFVLUldSL2s0d3BZRTBna09ERE5lIiwiaWF0IjoxNjE3OTIzNDI0fQ.NYZRSB4aaqdoUFfQHO84BkeYw3jQSZTBklNVI_Qs_PJrVM_3BqhbyLOy-nZ56Fg-kYeuD6qCHS8Nd1zmjsz24aCAQYJGzlfuyoZqkEabLA_hyMrfjrczFa1JR29EZn6KQLe3Gp4O_nX5W_ccXpFUrV6TTcUnGuMy04M4_6pSMh8
+Authorization: {{authToken}}

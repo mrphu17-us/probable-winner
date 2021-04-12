@@ -21,7 +21,9 @@ import {
   NbDialogModule,
   NbIconModule,
   NbUserModule,
-  NbTabsetModule, NbTreeGridModule, NbBadgeModule
+  NbTabsetModule,
+  NbTreeGridModule,
+  NbBadgeModule
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -37,6 +39,7 @@ import { SignupComponent } from './signup/signup.component';
 import { RouterModule } from '@angular/router';
 import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -54,8 +57,14 @@ import { UpdateCardComponent } from './board/update-card.component';
   imports: [
     BrowserModule,
     CommonModule,
+    HttpClientModule,
     ReactiveFormsModule,
+    PageRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    RouterModule,
+
+    // nebular modules
     NbThemeModule.forRoot({ name: 'dark' }),
     NbSidebarModule.forRoot(),
     NbLayoutModule,
@@ -63,10 +72,7 @@ import { UpdateCardComponent } from './board/update-card.component';
     NbButtonGroupModule,
     NbCardModule,
     NbListModule,
-    PageRoutingModule,
     NbInputModule,
-    FormsModule,
-    RouterModule,
     NbAlertModule,
     NbInputModule,
     NbButtonModule,
@@ -76,8 +82,6 @@ import { UpdateCardComponent } from './board/update-card.component';
     NbIconModule,
     NbUserModule,
     NbTabsetModule,
-
-    // NB Tree Modules:
     NbTreeGridModule,
     NbBadgeModule
   ],

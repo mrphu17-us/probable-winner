@@ -2,7 +2,7 @@
     <nb-card-body>
         <nb-tabset>
             <nb-tab
-                tabTitle="{{ boards.length }} Open"
+                tabTitle="{{ (boards$ | async)?.length }} Open"
                 tabIcon="activity-outline"
             >
                 <nb-list>
