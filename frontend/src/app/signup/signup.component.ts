@@ -4,7 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css'],
+  styleUrls:['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
   myForm:FormGroup;
@@ -26,10 +26,11 @@ export class SignupComponent implements OnInit {
   }
 
   exampleValidator(control: FormControl) {
-    if (control.value === 'SignUp Name') {
+    if (control.value === 'Board Name') {
       return "c'mon! tooo simple name"
     }
-      return null;
+
+    return null
   }
 
 }
