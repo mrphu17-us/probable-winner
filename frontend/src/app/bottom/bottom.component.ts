@@ -3,14 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-bottom',
   templateUrl: './bottom.component.html',
-  styles: [
-  ]
+  styles: [],
 })
 export class BottomComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

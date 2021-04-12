@@ -4,7 +4,7 @@ import { NbMenuItem } from '@nebular/theme';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
   items: NbMenuItem[] = [
@@ -25,11 +25,9 @@ export class HeaderComponent implements OnInit {
       icon: 'shopping-cart-outline',
       link: '/auth/signup',
       home: false,
-    }
-   ];
-  constructor() { }
+    },
+  ];
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
