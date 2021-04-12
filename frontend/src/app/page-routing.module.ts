@@ -38,6 +38,11 @@ const routes: Routes = [
     path: 'projects/list',
     component: ProjectListComponent,
   },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'projects/list',
+  },
 ];
 
 @NgModule({
