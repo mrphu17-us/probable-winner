@@ -21,7 +21,9 @@ import {
   NbDialogModule,
   NbIconModule,
   NbUserModule,
-  NbTabsetModule, NbTreeGridModule, NbBadgeModule
+  NbTabsetModule,
+  NbTreeGridModule,
+  NbBadgeModule,
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -37,6 +39,7 @@ import { SignupComponent } from './signup/signup.component';
 import { RouterModule } from '@angular/router';
 import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -75,13 +78,14 @@ import { UpdateCardComponent } from './board/update-card.component';
     NbDialogModule.forRoot({}),
     NbIconModule,
     NbUserModule,
+    HttpClientModule,
     NbTabsetModule,
 
     // NB Tree Modules:
     NbTreeGridModule,
-    NbBadgeModule
+    NbBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

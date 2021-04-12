@@ -20,8 +20,8 @@ Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFp
 DELETE  http://localhost:3000/api/boards/607318cae6602dad5381bc47 HTTP/1.1
 Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgxNzExODd9.wWuglF3fr2kYNTTluiKnae3DW3jaLF9vqV3TSWP6d33II9nAV9xF9PzkgP4R4tGKDQeSL-K9rdgXId6uiQByE190CF3TZ6FB5VfEeFgBsCqCOT0rf_uLXbpzWoIxf2OAufthOF53Q9XIfKMcHnLCwVi01hTE2VBX1bfIWyKD5Ms
 
-### Get all cards
-GET http://localhost:3000/api/cards HTTP/1.1
+### Get all cards by board id
+GET http://localhost:3000/api/cards/b/1?status=TODO HTTP/1.1
 Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgxNzExODd9.wWuglF3fr2kYNTTluiKnae3DW3jaLF9vqV3TSWP6d33II9nAV9xF9PzkgP4R4tGKDQeSL-K9rdgXId6uiQByE190CF3TZ6FB5VfEeFgBsCqCOT0rf_uLXbpzWoIxf2OAufthOF53Q9XIfKMcHnLCwVi01hTE2VBX1bfIWyKD5Ms
 
 ### Create Card
