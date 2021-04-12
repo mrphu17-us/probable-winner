@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule, NbAlertModule, NbButtonModule, NbCheckboxModule, NbInputModule, NbDialogModule, NbIconModule, NbUserModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonGroupModule, NbCardModule, NbListModule, NbAlertModule, NbButtonModule, NbCheckboxModule, NbInputModule, NbDialogModule, NbIconModule, NbUserModule, NbTabComponent, NbTabsetComponent, NbTabsetModule, NbTreeGridModule, NbBadgeModule } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { BottomComponent } from './bottom/bottom.component';
@@ -61,7 +61,12 @@ import { UpdateCardComponent } from './board/update-card.component';
     NbAuthModule,
     NbDialogModule.forRoot({}),
     NbIconModule,
-    NbUserModule
+    NbUserModule,
+    NbTabsetModule,
+
+    // NB Tree Modules:
+    NbTreeGridModule,
+    NbBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
