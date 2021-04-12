@@ -23,7 +23,7 @@ export class ProjectListComponent implements OnInit {
   ];
 
   closed_boards = [
-
+    { _id: '1', name: 'My Kanban 1', description: 'My Description 1', title: 'Building Great thing' },
   ]
 
 
@@ -33,8 +33,9 @@ export class ProjectListComponent implements OnInit {
     this.boards$ = this.dataService.getBoards();
   }
 
-  listClicked(user) {
-    console.log("clicked on", user);
-    this.router.navigate(['/board', '1']);
+  listClicked(board) {
+    console.log("clicked on", board);
+    this.router.navigate(['/board', '1']); // for testing purpose, will be replaced below
+    // this.router.navigate(['/board', board._id]); // UNCOMMENT after card api is done
   }
 }

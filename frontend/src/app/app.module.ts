@@ -40,6 +40,7 @@ import { RouterModule } from '@angular/router';
 import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DateAgoPipe } from './pipes/date-ago.pipe';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProjectComponent,
     NewCardComponent,
     UpdateCardComponent,
+    DateAgoPipe,
   ],
   imports: [
     BrowserModule,
@@ -81,7 +83,6 @@ import { HttpClientModule } from '@angular/common/http';
     NbDialogModule.forRoot({}),
     NbIconModule,
     NbUserModule,
-    HttpClientModule,
     NbTabsetModule,
     NbTreeGridModule,
     NbBadgeModule,

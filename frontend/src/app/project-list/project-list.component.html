@@ -5,15 +5,16 @@
                 tabTitle="{{ (boards$ | async)?.length }} Open"
                 tabIcon="activity-outline"
             >
-                <nb-list>
+                
+                <nb-list *ngIf="(boards$ | async)?.length > 0">
                     <nb-list-item
-                        *ngFor="let board of boards"
+                        *ngFor="let board of (boards$ | async)"
                         (click)="listClicked(board)"
                         style="position: relative"
                     >
                         <nb-user
-                            [name]="board.name"
-                            [title]="board.title"
+                            [name]="board.title"
+                            [title]="'updated: ' + (board.updated_at | dateAgo)"
                             picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG"
                         >
                         </nb-user>
