@@ -44,7 +44,7 @@ export class DataService {
   }
 
   getBoards() {
-    return this.http.get('http://localhost:3000/api/baords', {
+    return this.http.get('http://localhost:3000/api/boards', {
       headers: this.header,
     });
   }
