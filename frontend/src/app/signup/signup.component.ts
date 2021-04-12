@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -7,35 +12,28 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
+  myForm: FormGroup;
 
-  myForm:FormGroup;
-
-  constructor(private formBuilder:FormBuilder) {
+  constructor(private formBuilder: FormBuilder) {
     this.myForm = this.formBuilder.group({
-      user_name:['',[Validators.required,]],
-      email_name:['',[Validators.required,]],
-      password_field:['',[Validators.required,]]
-    })
+      user_name: ['', [Validators.required]],
+      email_name: ['', [Validators.required]],
+      password_field: ['', [Validators.required]],
+    });
     this.myForm.statusChanges.subscribe((data: any) => console.log(data));
-   }
-
-  ngOnInit(): void {
   }
 
+  ngOnInit(): void {}
+
   onSubmit(): void {
-    console.log("click Submit")
+    console.log('click Submit');
   }
 
   exampleValidator(control: FormControl) {
     if (control.value === 'Board Name') {
-      return "c'mon! tooo simple name"
+      return "c'mon! tooo simple name";
     }
 
-    return null
+    return null;
   }
-
-=======
-  constructor() {}
-
-  ngOnInit(): void {}
 }
