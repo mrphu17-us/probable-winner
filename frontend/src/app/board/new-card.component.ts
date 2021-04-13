@@ -13,8 +13,9 @@ import { DataService } from '../services/data.service';
   templateUrl: './new-card.component.html',
   styles: [
     `
-      nb-card {
-        width: 30rem;
+      form {
+        margin: auto;
+        width: 50rem;
       }
     `,
   ],
