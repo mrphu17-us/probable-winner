@@ -14,18 +14,10 @@ import { DataService } from '../services/data.service';
 export class ProjectListComponent implements OnInit {
 
   boards$: Observable<any>;
-  boards = [
-    { _id: '1', name: 'My Kanban 1', description: 'My Description 1', title: 'Building Great thing' },
-    { _id: '1', name: 'My Kanban 2', description: 'My Description 2', title: 'Building Great thing' },
-    { _id: '1', name: 'My Kanban 3', description: 'My Description 3', title: 'Building Great thing' },
-    { _id: '1', name: 'My Kanban 3', description: 'My Description 3', title: 'Building Great thing' },
-    { _id: '1', name: 'My Kanban 2', description: 'My Description 2', title: 'Building Great thing' },
-  ];
 
   closed_boards = [
     { _id: '1', name: 'My Kanban 1', description: 'My Description 1', title: 'Building Great thing' },
   ]
-
 
   constructor(private router: Router, private dataService: DataService) { }
 
@@ -35,7 +27,11 @@ export class ProjectListComponent implements OnInit {
 
   listClicked(board) {
     console.log("clicked on", board);
-    this.router.navigate(['/board', '1']); // for testing purpose, will be replaced below
+    this.router.navigate(['board', '1']); // for testing purpose, will be replaced below
     // this.router.navigate(['/board', board._id]); // UNCOMMENT after card api is done
+  }
+
+  goToCreateProject() {
+    this.router.navigate(['projects', 'create']);
   }
 }

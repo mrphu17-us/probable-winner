@@ -8,7 +8,7 @@ import { baseUrl } from 'src/environments/environment';
 export class DataService {
   private token: String;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getCards(board_id, status: String) {
     return this.http.get(
@@ -32,7 +32,12 @@ export class DataService {
     return this.http.put('http://localhost:3000/api/cards/' + card_id, data);
   }
 
+  // ---------- Board Section ----------
   getBoards() {
     return this.http.get(`${baseUrl}api/boards`);
+  }
+
+  createBoard(data: any) {
+    return this.http.post(`${baseUrl}api/boards`, data);
   }
 }

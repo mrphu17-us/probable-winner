@@ -3,14 +3,14 @@
     <nb-card-header>Create a New Project</nb-card-header>
     <nb-card-body>
       <div>
-        <input type="text" nbInput placeholder="Board Name" id="board_name" formControlName="board_name"/>
+        <input type="text" nbInput placeholder="Title" id="title" formControlName="title"/>
       </div>
       <div>
         <textarea type="textarea" nbInput fullWidth placeholder="Description (Optional)" formControlName="description"></textarea>
       </div>
     </nb-card-body>
     <nb-card-footer>
-      <button nbButton [disabled]="!myForm.valid">Create Project</button>
+      <button [nbSpinner]="loading"  nbButton [disabled]="!myForm.valid">Create Project</button>
     </nb-card-footer>
   </nb-card>
 </form>
