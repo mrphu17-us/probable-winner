@@ -3,7 +3,7 @@ import {
   HttpErrorResponse,
   HttpHeaders,
 } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { baseUrl } from 'src/environments/environment';
@@ -13,6 +13,11 @@ import { baseUrl } from 'src/environments/environment';
 })
 export class AuthServiceService {
   headers: HttpHeaders;
+  emitter = new EventEmitter<any>();
+
+  emitValue(data: any) {
+    this.emitter.emit(data);
+  }
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders().set('Content-Type', 'application/json');

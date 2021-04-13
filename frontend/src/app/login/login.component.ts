@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('access_token', data.token);
       localStorage.setItem('email', data.email);
       localStorage.setItem('name', data.name);
+      this.authService.emitValue({ isLoggedIn: true });
       this.router.navigate(['projects', 'list']);
     });
   }
