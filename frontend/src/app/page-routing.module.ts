@@ -9,6 +9,7 @@ import { ProjectListComponent } from './project-list/project-list.component';
 import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
 import { AuthGuard } from './guards/auth.guard';
+import { UpdateProjectComponent } from './project/update-project.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,11 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'projects/update/:board_id',
+    component: UpdateProjectComponent,
+    canActivate: [AuthGuard],
+  },
+  {
     path: '**',
     redirectTo: 'auth/login',
   },
@@ -59,4 +65,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class PageRoutingModule {}
+export class PageRoutingModule { }

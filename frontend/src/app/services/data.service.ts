@@ -40,4 +40,12 @@ export class DataService {
   createBoard(data: any) {
     return this.http.post(`${baseUrl}api/boards`, data);
   }
+
+  updateBoard(data: any) {
+    return this.http.put(`${baseUrl}api/boards/${data.board_id}`, data);
+  }
+
+  deleteBoard(board_id: string) {
+    return this.http.delete(`${baseUrl}api/boards/${board_id}`);
+  }
 }

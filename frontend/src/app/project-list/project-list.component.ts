@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DataService } from '../services/data.service';
 
@@ -26,12 +26,22 @@ export class ProjectListComponent implements OnInit {
   }
 
   listClicked(board) {
-    console.log("clicked on", board);
+    // console.log("clicked on", board);
     this.router.navigate(['board', '1']); // for testing purpose, will be replaced below
     // this.router.navigate(['/board', board._id]); // UNCOMMENT after card api is done
   }
 
   goToCreateProject() {
     this.router.navigate(['projects', 'create']);
+  }
+
+  deleteProject(board_id: string) {
+    if (confirm("Deleting this project and cannot be undone.")) {
+      this.dataService.deleteBoard(board_id).subscribe((res) => {
+        console.log(JSON.stringify(res));
+        this.router.navigate(['projects', 'list']);
+        this.boards$ = this.dataService.getBoards();
+      });
+    }
   }
 }
