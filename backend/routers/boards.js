@@ -7,7 +7,7 @@ router.post('', (req, res) => {
 
     boards.create({
         ...req.body,
-        created_by: created_by
+        // created_by: created_by
     }, function (err, result) {
         if (err) {
             res.json(err);
