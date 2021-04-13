@@ -1,4 +1,4 @@
-@authToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgyNjM5ODl9.t5z5LfogXxVR3o95ZkRXT4CMHv2uh0NHIfSor_nnVFixgQadTc3FHD-E8N7eJzRyXmZLDuEVJaUB6o4yPimaL32smmtEpObRUOoSSsQchkHMkRpTxRXb0fFD4Vi2Bx-PXorIV02nGucJbAZDu5pIVDU6CpABw7aClUiLF3Zjubc
+@authToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgyNjk4ODV9.PSgFGkaIRcZeMvbbBsAi3pyJvqr9Fw0-n1iVfxhITHeHJKpu9XxBLg2zeWila3oKG9Co2C8p7hK4RcoHz2T3Rz_AN_IR1kkxzx0KoSH70_m1LEGLeqN4FHqPWaeZ1fGfI6pG6aLzsZB6P_8qizZ9fLRlPIi5wksOfx1QWR3ugo8
 ## {{$dotenv TEST_AUTH_TOKEN}} you can use 
 
 ### Get all boards
@@ -24,7 +24,7 @@ DELETE  http://localhost:3000/api/boards/607318cae6602dad5381bc47 HTTP/1.1
 Authorization: {{authToken}}
 
 ### Get all cards
-GET http://localhost:3000/api/cards HTTP/1.1
+GET http://localhost:3000/api/cards/b/1 HTTP/1.1
 Authorization: {{authToken}}
 
 ### Create Card
@@ -42,3 +42,13 @@ content-type: application/json
 ### Find card by id
 GET http://localhost:3000/api/cards/6073248a226090b9e92ad2d1 HTTP/1.1
 Authorization: {{authToken}}
+
+### update Card
+PUT http://localhost:3000/api/cards/6074c583dfa89004e78a790e HTTP/1.1
+Authorization: {{authToken}}
+content-type: application/json
+
+{
+  "title": "demo project",
+  "description": "this should be fast =========="
+}

@@ -1,19 +1,22 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-<div class="form">
-<nb-layout>
-    <nb-layout-column>
-      <nb-card size="medium">
-        <nb-card-header>
+  <div class="form">
+    <nb-layout>
+      <nb-layout-column>
+        <nb-card size="medium">
+          <nb-card-header>
             <p class="sign" align="center">Sign in</p>
-        </nb-card-header>
-        <label align="left">Username</label>
-        <input type="email" class="em" nbInput fullWidth status="primary" fieldSize="medium" formControlName="email_name" placeholder="Username">
-        <br>
-        <label align="left">Password</label>
-        <input type="password" class="pass" nbInput fullWidth status="primary" fieldSize="medium" formControlName="password_field" placeholder="Password">
-        <button nbButton [disabled]="!myForm.valid" class="submit" status="success" size="small" shape="semi-round">Login</button>
-      </nb-card>
-    </nb-layout-column>
-  </nb-layout>
-</div>
+          </nb-card-header>
+          <label align="left">Email</label>
+          <input type="email" class="em" nbInput fullWidth status="primary" fieldSize="medium" formControlName="email"
+            placeholder="Email">
+          <br>
+          <label align="left">Password</label>
+          <input type="password" class="pass" nbInput fullWidth status="primary" fieldSize="medium"
+            formControlName="password" placeholder="Password">
+          <button nbButton [disabled]="!myForm.valid" type="submit" status="success" size="small"
+            shape="semi-round">Login</button>
+        </nb-card>
+      </nb-layout-column>
+    </nb-layout>
+  </div>
 </form>

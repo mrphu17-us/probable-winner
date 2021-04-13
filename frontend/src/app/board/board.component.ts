@@ -32,7 +32,7 @@ export class BoardComponent implements OnInit {
     this.cardsTODO$ = this.dataService.getCards(this.board_id, 'TODO');
     this.cardsInprogress$ = this.dataService.getCards(
       this.board_id,
-      'Inpgress'
+      'InProgress'
     );
     this.cardsDone$ = this.dataService.getCards(this.board_id, 'Done');
   }

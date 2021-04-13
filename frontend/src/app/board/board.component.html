@@ -11,13 +11,14 @@
         <nb-list-item *ngFor="let card of (cardsTODO$ | async)">
           <div class="box">
             <div style="margin: 5px;">
-              <span style="font-weight: bold;">{{card.title}}</span>
+              <span class="htitle">{{card.title}}</span>
               <button status="primary" size="tiny" nbButton (click)="updateCard(card._id)">
                 <nb-icon icon="more-horizontal"></nb-icon>
               </button>
-              <p style="color: black;">
+              <p>
                 {{card.description}}
               <p>
+              <p class='credit'>Created by: {{card.created_by}} - {{card.created_at | dateAgo}}</p>
             </div>
           </div>
         </nb-list-item>
@@ -36,12 +37,13 @@
         <nb-list-item *ngFor="let card of (cardsInprogress$ | async)">
           <div class="box">
             <div style="margin: 5px;">
-              <span>{{card.title}}</span>
-              <button status="primary" size="tiny" nbButton (click)="updateCard('TODO')">
+              <span class="htitle">{{card.title}}</span>
+              <button status="primary" size="tiny" nbButton (click)="updateCard(card._id)">
                 <nb-icon icon="more-horizontal"></nb-icon>
               </button>
-              <p style="color: black;">{{card.description}}
+              <p>{{card.description}}
               <p>
+              <p class='credit'>Created by: {{card.created_by}} - {{card.created_at | dateAgo}}</p>
             </div>
           </div>
         </nb-list-item>
@@ -60,12 +62,13 @@
         <nb-list-item *ngFor="let card of (cardsDone$ | async)">
           <div class="box">
             <div style="margin: 5px;">
-              <span>{{card.title}}</span>
-              <button status="primary" size="tiny" nbButton (click)="updateCard('TODO')">
+              <span class="htitle">{{card.title}}</span>
+              <button status="primary" size="tiny" nbButton (click)="updateCard(card._id)">
                 <nb-icon icon="more-horizontal"></nb-icon>
               </button>
-              <p style="color: black;">{{card.description}}
+              <p>{{card.description}}
               <p>
+              <p class='credit'>Created by: {{card.created_by}} - {{card.created_at | dateAgo}}</p>
             </div>
           </div>
         </nb-list-item>

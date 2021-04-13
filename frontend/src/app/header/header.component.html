@@ -1,17 +1,14 @@
 <div>
     <ul>
-        <li><a [routerLink]="['board/1']">Home</a></li>
-        <li><a [routerLink]="['projects/create']">Create Project</a></li>
-        <li><a [routerLink]="['projects/list']">List Project</a></li>
-        <li><a [routerLink]="['auth/login']">Sigin</a></li>
-        <li><a [routerLink]="['auth/signup']">Signup</a></li>
+        <li *ngIf=(isLogin)><a [routerLink]="['board/1']">Home</a></li>
+        <li *ngIf=(isLogin)><a [routerLink]="['projects/create']">Create Project</a></li>
+        <li *ngIf=(isLogin)><a [routerLink]="['projects/list']">List Project</a></li>
+        <li *ngIf=(!isLogin)><a [routerLink]="['auth/login']">Sigin</a></li>
+        <li *ngIf=(!isLogin)><a [routerLink]="['auth/signup']">Signup</a></li>
     </ul>
-    <nb-user
-        style="float: right"
-        size="large"
-        name="John Doe"
-        title="Engineer"
-        picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG"
-    >
+    <nb-user *ngIf=(isLogin) style="float: right" size="large" name={{name}} title={{email}}
+        picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG">
     </nb-user>
+    <button *ngIf=(isLogin) [disabled]="!isLogin" nbButton type="button" (click)="logout()" status="danger"
+        size="small">Logout</button>
 </div>
