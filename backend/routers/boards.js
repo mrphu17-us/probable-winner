@@ -19,7 +19,7 @@ router.post('', (req, res) => {
 
 router.get('', (req, res) => {
     boards.find({
-        // created_by: req.user.email
+        created_by: req.user.email
     }, function (err, result) {
         if (err) {
             res.json(err);

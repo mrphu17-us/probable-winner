@@ -27,6 +27,7 @@ import {
   NbTreeGridModule,
   NbBadgeModule,
   NbRadioModule,
+  NbSpinnerModule,
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -90,12 +91,10 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-
-    // NB Tree Modules:
-
     NbTreeGridModule,
     NbBadgeModule,
     NbRadioModule,
+    NbSpinnerModule
   ],
   providers: [
     {
@@ -106,4 +105,4 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -8,7 +8,7 @@ import { baseUrl } from 'src/environments/environment';
 export class DataService {
   private token: String;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getCards(board_id, status: String) {
     return this.http.get(
@@ -38,8 +38,6 @@ export class DataService {
   }
 
   createBoard(data: any) {
-    return this.http.post('http://localhost:3000/api/boards', data, {
-      headers: this.header,
-    });
+    return this.http.post(`${baseUrl}api/boards`, data);
   }
 }
