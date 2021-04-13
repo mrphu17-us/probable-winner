@@ -11,7 +11,7 @@ Authorization: {{authToken}}
 content-type: application/json
 
 {
-  "title": "Great Kanban",
+  "title": "Great Kanbans",
   "description": "This is a desription"
 }
 
