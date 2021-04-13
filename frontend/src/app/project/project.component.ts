@@ -22,7 +22,7 @@ export class ProjectComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log("click Submit")
+    //after submit create a new project
   }
 
   // --------- EXTRA VALIDATORS --------------
