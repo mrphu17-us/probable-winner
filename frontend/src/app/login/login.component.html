@@ -6,6 +6,7 @@
           <nb-card-header>
             <p class="sign" align="center">Sign in</p>
           </nb-card-header>
+          <nb-card-body>
           <label align="left">Email</label>
           <input type="email" class="em" nbInput fullWidth status="primary" fieldSize="medium" formControlName="email"
             placeholder="Email">
@@ -13,8 +14,11 @@
           <label align="left">Password</label>
           <input type="password" class="pass" nbInput fullWidth status="primary" fieldSize="medium"
             formControlName="password" placeholder="Password">
-          <button nbButton [disabled]="!myForm.valid" type="submit" status="success" size="small"
+          </nb-card-body>
+          <nb-card-footer>
+          <button nbButton [disabled]="!myForm.valid" type="submit" status="success" size="medium"
             shape="semi-round">Login</button>
+          </nb-card-footer>
         </nb-card>
       </nb-layout-column>
     </nb-layout>
