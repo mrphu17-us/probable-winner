@@ -28,7 +28,7 @@ export class AuthServiceService {
   }
 
   signUp(data): Observable<any> {
-    let api = `${baseUrl}/auth/signup`;
+    let api = `${baseUrl}auth/signup`;
     return this.http.post(api, data).pipe(catchError(this.handleError));
   }
 

@@ -22,9 +22,9 @@ export class SignupComponent implements OnInit {
     public router: Router
   ) {
     this.myForm = this.fb.group({
-      user_name: ['', [Validators.required]],
-      email_name: ['', [Validators.required]],
-      password_field: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
     });
   }
 
@@ -32,9 +32,8 @@ export class SignupComponent implements OnInit {
 
   onSubmit(): void {
     this.authService.signUp(this.myForm.value).subscribe((res) => {
-      if (res.result) {
-        this.myForm.reset();
-        this.router.navigate(['auth/login']);
+      if (res) {
+        this.router.navigate(['auth','login']);
       }
     });
   }
