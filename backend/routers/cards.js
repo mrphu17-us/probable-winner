@@ -19,7 +19,7 @@ router.post('', (req, res) => {
 router.put('/:card_id', (req, res) => {
     cards.updateOne({
         _id: req.params.card_id,
-        'created_by': req.user.email
+        // 'created_by': req.user.email
     }, {
         $set: {
             title: req.body.title,
@@ -40,7 +40,7 @@ router.put('/:card_id', (req, res) => {
 router.get('/b/:board_id', (req, res) => {
     cards.find({
         'board_id': req.params.board_id,
-        'created_by': req.user.email,
+        // 'created_by': req.user.email,
         'status': req.query.status
     }, function (err, result) {
         if (err) {
@@ -54,7 +54,7 @@ router.get('/b/:board_id', (req, res) => {
 router.get('/:id', (req, res) => {
     cards.findOne({
         _id: req.params.id,
-        'created_by': req.user.email
+        // 'created_by': req.user.email
     }, function (err, result) {
         if (err) {
             res.json(err);
