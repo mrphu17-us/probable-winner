@@ -28,6 +28,7 @@ import {
   NbBadgeModule,
   NbRadioModule,
   NbSpinnerModule,
+  NbTooltipModule,
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -45,6 +46,7 @@ import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
+import { UpdateProjectComponent } from './project/update-project.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     NewCardComponent,
     UpdateCardComponent,
     DateAgoPipe,
+    UpdateProjectComponent,
   ],
   imports: [
     BrowserModule,
@@ -94,7 +97,8 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
     NbTreeGridModule,
     NbBadgeModule,
     NbRadioModule,
-    NbSpinnerModule
+    NbSpinnerModule,
+    NbTooltipModule
   ],
   providers: [
     {

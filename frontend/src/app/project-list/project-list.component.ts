@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { DataService } from '../services/data.service';
 
@@ -33,5 +33,15 @@ export class ProjectListComponent implements OnInit {
 
   goToCreateProject() {
     this.router.navigate(['projects', 'create']);
+  }
+
+  deleteProject(board_id: string) {
+    if (confirm("Deleting this project and cannot be undone.")) {
+      this.dataService.deleteBoard(board_id).subscribe((res) => {
+        console.log(JSON.stringify(res));
+        this.router.navigate(['projects', 'list']);
+        this.boards$ = this.dataService.getBoards();
+      });
+    }
   }
 }

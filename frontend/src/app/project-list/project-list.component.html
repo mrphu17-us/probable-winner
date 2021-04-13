@@ -18,25 +18,29 @@
                         <nb-user
                             [name]="board.title"
                             [title]="'updated: ' + (board.updated_at | dateAgo)"
-                            picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG"
                         >
                         </nb-user>
 
-                        <div style="margin-left: 3%">
+                        <div style="position: absolute; left: 280px;">
                             {{ board.description }}
                         </div>
-
-                        <nb-badge
-                            text="private"
-                            status="basic"
-                            position="right"
-                        ></nb-badge>
+                        
+                        <div style="position: absolute; right: 2%;">
+                            <button nbButton ghost status="basic" nbTooltip="Update" [routerLink]="['/projects', 'update', board._id]" [state]="{board: board}">
+                                <nb-icon icon="edit-2-outline"></nb-icon>
+                            </button>
+                            <button nbButton ghost status="basic" nbTooltip="Delete"  (click)="deleteProject(board._id)">
+                                <nb-icon icon="trash-2-outline"></nb-icon>
+                            </button>
+                        </div>
                     </nb-list-item>
                 </nb-list>
             </nb-tab>
             <nb-tab
                 tabTitle="{{ closed_boards.length }} Closed"
                 tabIcon="done-all-outline"
+                nbTooltip="Coming Soon"
+                disabled
             >
                 <nb-list>
                     <nb-list-item
