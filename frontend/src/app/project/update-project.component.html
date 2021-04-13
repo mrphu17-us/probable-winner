@@ -1,3 +1,10 @@
+<div class="back_button">
+  <button nbButton outline status="primary" [routerLink]="['/projects', 'list']">
+    <nb-icon icon="arrow-circle-left-outline"></nb-icon>
+    Back To Project List
+  </button>
+</div>
+
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
   <nb-card>
     <nb-card-header>Update Project</nb-card-header>

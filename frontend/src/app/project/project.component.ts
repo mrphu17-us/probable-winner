@@ -8,7 +8,13 @@ import { DataService } from '../services/data.service';
   selector: 'app-project',
   templateUrl: './project.component.html',
   styles: [
-    `div { margin-top: 1%; }`
+    `div { margin-top: 1%; }
+    
+    div.back_button {
+      margin-top: 0;
+      margin-bottom: 1%;
+    }
+    `
   ]
 })
 export class ProjectComponent implements OnInit {

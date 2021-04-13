@@ -9,6 +9,11 @@ import { DataService } from '../services/data.service';
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
   styles: [
+    `
+    .board_card_linker {
+      cursor: pointer;
+    }
+    `
   ]
 })
 export class ProjectListComponent implements OnInit {
@@ -23,12 +28,6 @@ export class ProjectListComponent implements OnInit {
 
   ngOnInit(): void {
     this.boards$ = this.dataService.getBoards();
-  }
-
-  listClicked(board) {
-    // console.log("clicked on", board);
-    this.router.navigate(['board', '1']); // for testing purpose, will be replaced below
-    // this.router.navigate(['/board', board._id]); // UNCOMMENT after card api is done
   }
 
   goToCreateProject() {

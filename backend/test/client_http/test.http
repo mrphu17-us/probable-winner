@@ -20,17 +20,17 @@ GET http://localhost:3000/api/boards/607318cbe6602dad5381bc48 HTTP/1.1
 Authorization: {{authToken}}
 
 ### UPDATE BOARD
-PUT  http://localhost:3000/api/boards/607318cbe6602dad5381bc48 HTTP/1.1
+PUT  http://localhost:3000/api/boards/60760cbe459f73192a954d39 HTTP/1.1
 Authorization: {{authToken}}
 content-type: application/json
 
 {
-  "title": "Great Kanban (Updated1)",
+  "title": "Great Kanban (Updated55)",
   "description": "This is a desription (Updated)"
 }
 
 ### DELETE BOARD
-DELETE  http://localhost:3000/api/boards/607318cce6602dad5381bc49 HTTP/1.1
+DELETE  http://localhost:3000/api/boards/60760cbe459f73192a954d39 HTTP/1.1
 Authorization: {{authToken}}
 
 ### Get all cards
