@@ -4,15 +4,19 @@
     <nb-layout-column>
     <nb-card size="medium">
         <nb-card-header>
-            <p class="sign" align="center">Sign Up</p>
+            <p class="sign" align="center">Create Account</p>
         </nb-card-header>
+        <nb-card-body>
         <label align="left">Username</label>
         <input type="text" class="em" nbInput fullWidth status="primary" formControlName="name" fieldSize="medium" placeholder="Username">
         <label align="left">Email</label>
         <input type="email" class="em" nbInput fullWidth status="primary" formControlName="email" fieldSize="medium" placeholder="Email">
         <label align="left">Password</label>
         <input type="password" class="pass" nbInput fullWidth status="primary" formControlName="password" fieldSize="medium" placeholder="Password">
-        <button nbButton class="submit" [disabled]="!myForm.valid" status="success" size="small" shape="semi-round">Login</button>
+    </nb-card-body>
+    <nb-card-footer>
+        <button nbButton class="submit" [disabled]="!myForm.valid" status="success" size="medium" shape="semi-round">Login</button>
+    </nb-card-footer>
     </nb-card>
     </nb-layout-column>
 </nb-layout>
