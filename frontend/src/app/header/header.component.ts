@@ -33,10 +33,13 @@ export class HeaderComponent implements OnInit {
       home: false,
     },
   ];
-  constructor(
-    private router: Router,
-    private authService: AuthServiceService
-  ) {}
+  constructor(private router: Router, private authService: AuthServiceService) {
+    if (localStorage.getItem('access_token')) {
+      this.isLogin = true;
+      this.name = localStorage.getItem('name');
+      this.email = localStorage.getItem('email');
+    }
+  }
 
   logout(): void {
     localStorage.clear();
