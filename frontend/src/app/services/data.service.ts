@@ -29,9 +29,7 @@ export class DataService {
   }
 
   updateCard(card_id: String, data: any) {
-    return this.http.post('http://localhost:3000/api/cards/' + card_id, data, {
-      headers: this.header,
-    });
+    return this.http.put('http://localhost:3000/api/cards/' + card_id, data);
   }
 
   getBoards() {
