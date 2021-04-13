@@ -1,17 +1,22 @@
-<form [formGroup]="myForm">
-  <nb-card size="small" status="info" style="width: 30rem;">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <nb-card size=" large" status="info">
     <nb-card-header>Update Card</nb-card-header>
     <nb-card-body>
       <div>
-        <input fullWidth type="text" nbInput placeholder="Title" id="title" formControlName="title" />
+        <input fullWidth type="text" nbInput placeholder="Task name" id="title" formControlName="title" />
       </div><br />
       <div>
         <textarea type="textarea" nbInput fullWidth placeholder="Description (Optional)"
           formControlName="description"></textarea>
       </div>
+      <nb-radio-group formControlName="status" [(ngModel)]="selectedOption">
+        <nb-radio value="TODO">TODO</nb-radio>
+        <nb-radio value="InProgress">InProgress</nb-radio>
+        <nb-radio value="Done">Done</nb-radio>
+      </nb-radio-group>
     </nb-card-body>
     <nb-card-footer>
-      <button nbButton [disabled]="!myForm.valid">Update</button>
+      <button status="success" nbButton [disabled]="!myForm.valid">Update</button>
       <button style="margin-left: 10px;" status="danger" nbButton (click)="onDelete()">Delete</button>
     </nb-card-footer>
   </nb-card>

@@ -28,6 +28,10 @@ export class DataService {
     return this.http.post(`${baseUrl}api/cards`, data);
   }
 
+  updateCard(card_id: String, data: any) {
+    return this.http.put('http://localhost:3000/api/cards/' + card_id, data);
+  }
+
   getBoards() {
     return this.http.get(`${baseUrl}api/boards`);
   }

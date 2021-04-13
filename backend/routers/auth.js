@@ -23,7 +23,9 @@ router.post('/login', async (req, res, next) => {
                     algorithm: 'RS256'
                 });
                 return res.json({
-                    token: token
+                    token: token,
+                    'email': user.email,
+                    'name': user.name
                 });
             } else {
                 return res.status(400).json({

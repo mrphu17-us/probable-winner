@@ -48,6 +48,11 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'auth/login',
   },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'projects/list',
+  },
 ];
 
 @NgModule({

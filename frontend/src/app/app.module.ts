@@ -26,6 +26,7 @@ import {
   NbTabsetModule,
   NbTreeGridModule,
   NbBadgeModule,
+  NbRadioModule,
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -94,6 +95,7 @@ import { DateAgoPipe } from './pipes/date-ago.pipe';
 
     NbTreeGridModule,
     NbBadgeModule,
+    NbRadioModule,
   ],
   providers: [
     {

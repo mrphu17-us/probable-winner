@@ -16,6 +16,21 @@ button {
   background-color: #e4e9f2;
 }
 
+.box p {
+  color: black;
+}
+
+.box .htitle {
+  font-size: large;
+  font-weight: 700;
+}
+
+.box p.credit {
+  color: rgb(123, 123, 123);
+  font-style: italic;
+  font-size: small;
+}
+
 .box span {
   font-weight: 700;
 }

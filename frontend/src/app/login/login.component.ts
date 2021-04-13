@@ -29,8 +29,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.authService.signIn(this.myForm.value).subscribe((data) => {
-      let token = data.token;
-      localStorage.setItem('access_token', token);
+      localStorage.setItem('access_token', data.token);
+      localStorage.setItem('email', data.email);
+      localStorage.setItem('name', data.name);
       this.router.navigate(['projects', 'list']);
     });
   }

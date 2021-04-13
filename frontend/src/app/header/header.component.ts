@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NbMenuItem } from '@nebular/theme';
 
 @Component({
@@ -7,6 +8,10 @@ import { NbMenuItem } from '@nebular/theme';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  name: String;
+  email: String;
+  isLogin;
+
   items: NbMenuItem[] = [
     {
       title: 'Dashboard',
@@ -27,7 +32,18 @@ export class HeaderComponent implements OnInit {
       home: false,
     },
   ];
-  constructor() {}
+  constructor(private router: Router) {
+    if (localStorage.getItem('access_token') != null) this.isLogin = true;
+  }
 
-  ngOnInit(): void {}
+  logout(): void {
+    localStorage.clear();
+    this.isLogin = false;
+    this.router.navigate(['auth', 'login']);
+  }
+
+  ngOnInit(): void {
+    this.name = localStorage.getItem('name');
+    this.email = localStorage.getItem('email');
+  }
 }
