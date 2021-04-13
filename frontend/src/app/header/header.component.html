@@ -6,12 +6,8 @@
         <li><a [routerLink]="['auth/login']">Sigin</a></li>
         <li><a [routerLink]="['auth/signup']">Signup</a></li>
     </ul>
-    <nb-user
-        style="float: right"
-        size="large"
-        name="John Doe"
-        title="Engineer"
-        picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG"
-    >
+    <nb-user style="float: right" size="large" name={{name}} title={{email}}
+        picture="https://via.placeholder.com/50/4479e7/ffffff?Text=IMG">
     </nb-user>
+    <button [disabled]="!isLogin" nbButton type="button" (click)="logout()" status="danger" size="small">Logout</button>
 </div>

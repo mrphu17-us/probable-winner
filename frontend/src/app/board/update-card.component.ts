@@ -21,6 +21,8 @@ export class UpdateCardComponent implements OnInit {
   card_id: String;
   subscription: Subscription;
   FormData: any;
+  status;
+  selectedOption = 'TODO';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -31,6 +33,7 @@ export class UpdateCardComponent implements OnInit {
     this.myForm = this.formBuilder.group({
       title: ['', [Validators.required]],
       description: ['', []],
+      status: ['', [Validators.required]],
     });
     this.myForm.statusChanges.subscribe((data: any) => console.log(data));
   }
@@ -40,7 +43,7 @@ export class UpdateCardComponent implements OnInit {
       board_id: this.board_id,
       ...this.myForm.value,
     };
-    this.dataService.createCard(data).subscribe((data) => {
+    this.dataService.updateCard(this.card_id, data).subscribe((data) => {
       this.router.navigate(['board', this.board_id]);
     });
   }
@@ -58,9 +61,11 @@ export class UpdateCardComponent implements OnInit {
       this.board_id = params['board_id'];
       this.card_id = params['card_id'];
       this.dataService.getCard(this.card_id).subscribe((data) => {
+        this.selectedOption = data['status'];
         this.myForm.setValue({
           title: data['title'],
           description: data['description'],
+          status: data['status'] ?? 'TODO',
         });
       });
     });
