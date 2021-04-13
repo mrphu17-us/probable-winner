@@ -7,7 +7,7 @@ router.post('', (req, res) => {
 
     boards.create({
         ...req.body,
-        // created_by: created_by
+        created_by: created_by
     }, function (err, result) {
         if (err) {
             res.json(err);
@@ -19,8 +19,10 @@ router.post('', (req, res) => {
 
 router.get('', (req, res) => {
     boards.find({
-        created_by: req.user.email
-    }, function (err, result) {
+        // created_by: req.user.email
+    })
+    .sort({'updated_at': 'desc'})
+    .exec(function (err, result) {
         if (err) {
             res.json(err);
         } else {
@@ -37,6 +39,26 @@ router.get('/:id', (req, res) => {
             res.json(err);
         } else {
             res.json(result);
+        }
+    });
+})
+
+router.put('/:id', (req, res) => {
+    console.log(`UPDATING BOARD ${req.params.id}`);
+    boards.updateOne({
+        _id: req.params.id
+    }, {
+        $set: {
+            title: req.body.title,
+            description: req.body.description
+        }
+    }, function (err, result) {
+        if (err) {
+            res.json(err);
+        } else {
+            res.json({
+                'msg': 'successful'
+            });
         }
     });
 })
