@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NbMenuItem } from '@nebular/theme';
+import { AuthServiceService } from '../services/auth-service.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import { NbMenuItem } from '@nebular/theme';
 export class HeaderComponent implements OnInit {
   name: String;
   email: String;
-  isLogin;
+  isLogin: Boolean;
 
   items: NbMenuItem[] = [
     {
@@ -32,18 +33,28 @@ export class HeaderComponent implements OnInit {
       home: false,
     },
   ];
-  constructor(private router: Router) {
-    if (localStorage.getItem('access_token') != null) this.isLogin = true;
-  }
+  constructor(
+    private router: Router,
+    private authService: AuthServiceService
+  ) {}
 
   logout(): void {
     localStorage.clear();
-    this.isLogin = false;
+    this.authService.emitValue({ isLoggedIn: false });
     this.router.navigate(['auth', 'login']);
   }
 
   ngOnInit(): void {
-    this.name = localStorage.getItem('name');
-    this.email = localStorage.getItem('email');
+    this.authService.emitter.subscribe((data) => {
+      if (data.isLoggedIn == true) {
+        this.isLogin = true;
+        this.name = localStorage.getItem('name');
+        this.email = localStorage.getItem('email');
+      } else {
+        this.isLogin = false;
+        this.name = '';
+        this.email = '';
+      }
+    });
   }
 }
