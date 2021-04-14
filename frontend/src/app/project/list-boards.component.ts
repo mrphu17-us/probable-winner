@@ -32,11 +32,6 @@ export class ListBoardsComponent implements OnInit {
     this.boards$ = this.dataService.getBoards();
   }
 
-  listClicked(board) {
-    console.log('clicked on', board);
-    this.router.navigate(['board', board._id]); // UNCOMMENT after card api is done
-  }
-
   goToCreateBoard() {
     this.router.navigate(['boards', 'create']);
   }
