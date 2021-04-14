@@ -1,5 +1,5 @@
 @startuml
-title MWA Project - Task Management
+title mwa-use-case
 left to right direction
 
 actor User
