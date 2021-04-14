@@ -6,7 +6,13 @@ import { DataService } from '../services/data.service';
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
-  styles: [],
+  styles: [
+    `
+    .board_card_linker {
+      cursor: pointer;
+    }
+    `
+  ]
 })
 export class ProjectListComponent implements OnInit {
   boards$: Observable<any>;

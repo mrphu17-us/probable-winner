@@ -12,12 +12,13 @@
                 <nb-list *ngIf="(boards$ | async)?.length > 0">
                     <nb-list-item
                         *ngFor="let board of (boards$ | async)"
-                        (click)="listClicked(board)"
                         style="position: relative"
                     >
                         <nb-user
+                            class="board_card_linker"
                             [name]="board.title"
                             [title]="'updated: ' + (board.updated_at | dateAgo)"
+                            [routerLink]="['/board', board._id]"
                         >
                         </nb-user>
 

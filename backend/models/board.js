@@ -37,4 +37,9 @@ board.pre('save', function (next) {
     next();
 })
 
+board.pre('updateOne', function (next) {
+    this.set({ updated_at: new Date() });
+    next();
+})
+
 module.exports = mongoose.model("board", board);

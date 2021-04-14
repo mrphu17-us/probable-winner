@@ -10,7 +10,15 @@ import { DataService } from '../services/data.service';
   selector: 'app-update-project',
   templateUrl: './update-project.component.html',
   styles: [
-    `div { margin-top: 1%; }`
+    `
+    div { margin-top: 1%; }
+    
+    div.back_button {
+      margin-top: 0;
+      margin-bottom: 1%;
+    }
+    `
+
   ]
 })
 export class UpdateProjectComponent implements OnInit {
