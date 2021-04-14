@@ -7,8 +7,8 @@ import { DataService } from '../services/data.service';
 
 
 @Component({
-  selector: 'app-update-project',
-  templateUrl: './update-project.component.html',
+  selector: 'app-update-board',
+  templateUrl: './update-board.component.html',
   styles: [
     `
     div { margin-top: 1%; }
@@ -18,10 +18,9 @@ import { DataService } from '../services/data.service';
       margin-bottom: 1%;
     }
     `
-
   ]
 })
-export class UpdateProjectComponent implements OnInit {
+export class UpdateBoardComponent implements OnInit {
   createdBoard$: Observable<any>;
   myForm: FormGroup;
   loading: boolean = false;
@@ -64,7 +63,7 @@ export class UpdateProjectComponent implements OnInit {
     //after submit create a new project
     this.dataService.updateBoard(data).subscribe((res) => {
       console.log(JSON.stringify(res));
-      this.router.navigate(['projects', 'list']);
+      this.router.navigate(['boards', 'list']);
     });
   }
 
@@ -76,6 +75,4 @@ export class UpdateProjectComponent implements OnInit {
 
     return null
   }
-
-
 }

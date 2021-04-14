@@ -35,8 +35,8 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { BottomComponent } from './bottom/bottom.component';
 import { HeaderComponent } from './header/header.component';
 import { PageRoutingModule } from './page-routing.module';
-import { ProjectComponent } from './project/project.component';
-import { ProjectListComponent } from './project-list/project-list.component';
+import { CreateBoardComponent } from './project/create-board.component';
+import { ListBoardsComponent } from './project/list-boards.component';
 import { LoginComponent } from './login/login.component';
 import { NbAuthModule } from '@nebular/auth';
 import { FormsModule } from '@angular/forms';
@@ -46,22 +46,32 @@ import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DateAgoPipe } from './pipes/date-ago.pipe';
-import { UpdateProjectComponent } from './project/update-project.component';
+import { UpdateBoardComponent } from './project/update-board.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BoardComponent,
+
+    // General Components
     HeaderComponent,
     BottomComponent,
-    ProjectListComponent,
-    LoginComponent,
-    SignupComponent,
-    ProjectComponent,
+
+    // Card Components
+    BoardComponent,
     NewCardComponent,
     UpdateCardComponent,
+
+    // User Components
+    LoginComponent,
+    SignupComponent,
+
+    // Board Components
+    ListBoardsComponent,
+    CreateBoardComponent,
+    UpdateBoardComponent,
+
+    // Pipes
     DateAgoPipe,
-    UpdateProjectComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,8 +80,9 @@ import { UpdateProjectComponent } from './project/update-project.component';
     ReactiveFormsModule,
     PageRoutingModule,
     BrowserAnimationsModule,
-    FormsModule,
     RouterModule,
+    HttpClientModule,
+    FormsModule,
 
     // nebular modules
     NbThemeModule.forRoot({ name: 'dark' }),
@@ -91,9 +102,6 @@ import { UpdateProjectComponent } from './project/update-project.component';
     NbIconModule,
     NbUserModule,
     NbTabsetModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
     NbTreeGridModule,
     NbBadgeModule,
     NbRadioModule,

@@ -1,6 +1,6 @@
 <nb-card size="giant" status="basic">
     <nb-card-header>
-        <button nbButton (click)="goToCreateProject()">Create Project</button>
+        <button nbButton (click)="goToCreateBoard()">Create Board</button>
     </nb-card-header>
     <nb-card-body>
         <nb-tabset>
@@ -27,10 +27,10 @@
                         </div>
                         
                         <div style="position: absolute; right: 2%;">
-                            <button nbButton ghost status="basic" nbTooltip="Update" [routerLink]="['/projects', 'update', board._id]" [state]="{board: board}">
+                            <button nbButton ghost status="basic" nbTooltip="Update" [routerLink]="['/boards', 'update', board._id]" [state]="{board: board}">
                                 <nb-icon icon="edit-2-outline"></nb-icon>
                             </button>
-                            <button nbButton ghost status="basic" nbTooltip="Delete"  (click)="deleteProject(board._id)">
+                            <button nbButton ghost status="basic" nbTooltip="Delete"  (click)="deleteBoard(board._id)">
                                 <nb-icon icon="trash-2-outline"></nb-icon>
                             </button>
                         </div>
