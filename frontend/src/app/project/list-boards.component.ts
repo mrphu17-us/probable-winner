@@ -5,7 +5,7 @@ import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-project-list',
-  templateUrl: './project-list.component.html',
+  templateUrl: './list-boards.component.html',
   styles: [
     `
     .board_card_linker {
@@ -14,7 +14,7 @@ import { DataService } from '../services/data.service';
     `
   ]
 })
-export class ProjectListComponent implements OnInit {
+export class ListBoardsComponent implements OnInit {
   boards$: Observable<any>;
 
   closed_boards = [
@@ -26,7 +26,7 @@ export class ProjectListComponent implements OnInit {
     },
   ];
 
-  constructor(private router: Router, private dataService: DataService) {}
+  constructor(private router: Router, private dataService: DataService) { }
 
   ngOnInit(): void {
     this.boards$ = this.dataService.getBoards();
@@ -37,15 +37,15 @@ export class ProjectListComponent implements OnInit {
     this.router.navigate(['board', board._id]); // UNCOMMENT after card api is done
   }
 
-  goToCreateProject() {
-    this.router.navigate(['projects', 'create']);
+  goToCreateBoard() {
+    this.router.navigate(['boards', 'create']);
   }
 
-  deleteProject(board_id: string) {
+  deleteBoard(board_id: string) {
     if (confirm("Deleting this project and cannot be undone.")) {
       this.dataService.deleteBoard(board_id).subscribe((res) => {
         console.log(JSON.stringify(res));
-        this.router.navigate(['projects', 'list']);
+        this.router.navigate(['boards', 'list']);
         this.boards$ = this.dataService.getBoards();
       });
     }

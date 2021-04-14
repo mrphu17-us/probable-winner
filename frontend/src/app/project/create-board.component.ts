@@ -5,8 +5,8 @@ import { Observable } from 'rxjs';
 import { DataService } from '../services/data.service';
 
 @Component({
-  selector: 'app-project',
-  templateUrl: './project.component.html',
+  selector: 'app-create-board',
+  templateUrl: './create-board.component.html',
   styles: [
     `div { margin-top: 1%; }
     
@@ -17,7 +17,7 @@ import { DataService } from '../services/data.service';
     `
   ]
 })
-export class ProjectComponent implements OnInit {
+export class CreateBoardComponent implements OnInit {
   createdBoard$: Observable<any>;
   myForm: FormGroup;
   loading: boolean = false;
@@ -28,7 +28,6 @@ export class ProjectComponent implements OnInit {
       description: ['', []],
     })
     this.myForm.statusChanges.subscribe((data: any) => console.log(data));
-    // this.myForm.valueChanges.subscribe((data: any) => console.log(data));
   }
 
   ngOnInit(): void {
@@ -39,7 +38,7 @@ export class ProjectComponent implements OnInit {
     console.log(this.myForm.value);
     //after submit create a new project
     this.dataService.createBoard(this.myForm.value).subscribe((data) => {
-      this.router.navigate(['projects', 'list']);
+      this.router.navigate(['boards', 'list']);
     });
   }
 

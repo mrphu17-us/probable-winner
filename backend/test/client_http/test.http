@@ -1,11 +1,12 @@
 @authToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InBpc3VuMkBnbWFpbC5jb20iLCJpYXQiOjE2MTgyNjk4ODV9.PSgFGkaIRcZeMvbbBsAi3pyJvqr9Fw0-n1iVfxhITHeHJKpu9XxBLg2zeWila3oKG9Co2C8p7hK4RcoHz2T3Rz_AN_IR1kkxzx0KoSH70_m1LEGLeqN4FHqPWaeZ1fGfI6pG6aLzsZB6P_8qizZ9fLRlPIi5wksOfx1QWR3ugo8
 ## {{$dotenv TEST_AUTH_TOKEN}} you can use 
 
+# ---------------------------------------- BOARD ----------------------------------------
 ### Get all boards
 GET http://localhost:3000/api/boards HTTP/1.1
 Authorization: {{authToken}}
 
-### Create Card
+### Create BOARD
 POST http://localhost:3000/api/boards HTTP/1.1
 Authorization: {{authToken}}
 content-type: application/json
@@ -33,6 +34,7 @@ content-type: application/json
 DELETE  http://localhost:3000/api/boards/60760cbe459f73192a954d39 HTTP/1.1
 Authorization: {{authToken}}
 
+# ---------------------------------------- CARD ----------------------------------------
 ### Get all cards
 GET http://localhost:3000/api/cards/b/1 HTTP/1.1
 Authorization: {{authToken}}

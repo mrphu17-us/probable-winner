@@ -1,15 +1,13 @@
 <div class="back_button">
-  <button nbButton outline status="primary" [routerLink]="['/projects', 'list']">
+  <button nbButton outline status="primary" [routerLink]="['/boards', 'list']">
     <nb-icon icon="arrow-circle-left-outline"></nb-icon>
-    Back To Project List
+    Back To Board List
   </button>
 </div>
 
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
   <nb-card>
-    <nb-card-header>
-
-      Create a New Project</nb-card-header>
+    <nb-card-header>Create a New Board</nb-card-header>
     <nb-card-body>
       <div>
         <input type="text" nbInput placeholder="Title" id="title" formControlName="title"/>
@@ -19,7 +17,7 @@
       </div>
     </nb-card-body>
     <nb-card-footer>
-      <button [nbSpinner]="loading"  nbButton [disabled]="!myForm.valid">Create Project</button>
+      <button [nbSpinner]="loading"  nbButton [disabled]="!myForm.valid">Create Board</button>
     </nb-card-footer>
   </nb-card>
 </form>

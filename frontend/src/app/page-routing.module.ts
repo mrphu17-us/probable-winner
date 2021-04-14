@@ -4,12 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { BoardComponent } from './board/board.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { ProjectComponent } from './project/project.component';
-import { ProjectListComponent } from './project-list/project-list.component';
+import { CreateBoardComponent } from './project/create-board.component';
+import { ListBoardsComponent } from './project/list-boards.component';
 import { NewCardComponent } from './board/new-card.component';
 import { UpdateCardComponent } from './board/update-card.component';
 import { AuthGuard } from './guards/auth.guard';
-import { UpdateProjectComponent } from './project/update-project.component';
+import { UpdateBoardComponent } from './project/update-board.component';
 
 const routes: Routes = [
   {
@@ -26,8 +26,8 @@ const routes: Routes = [
     component: SignupComponent,
   },
   {
-    path: 'projects/create',
-    component: ProjectComponent,
+    path: 'boards/create',
+    component: CreateBoardComponent,
     canActivate: [AuthGuard],
   },
   {
@@ -41,13 +41,13 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'projects/list',
-    component: ProjectListComponent,
+    path: 'boards/list',
+    component: ListBoardsComponent,
     canActivate: [AuthGuard],
   },
   {
-    path: 'projects/update/:board_id',
-    component: UpdateProjectComponent,
+    path: 'boards/update/:board_id',
+    component: UpdateBoardComponent,
     canActivate: [AuthGuard],
   },
   {
@@ -57,7 +57,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'projects/list',
+    redirectTo: 'boards/list',
   },
 ];
 
