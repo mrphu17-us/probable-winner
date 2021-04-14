@@ -1,8 +1,8 @@
 # probable-winner
 
-Team Lead: The Phu Nguyen
-Team Member: Stojan Terziev
-Team Member: Bayartsogt Yadamsuren
+* Team Lead: The Phu Nguyen
+* Team Member: Stojan Terziev
+* Team Member: Bayartsogt Yadamsuren
 
 ## Backend Structure
 
