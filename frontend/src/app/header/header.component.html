@@ -1,8 +1,6 @@
 <div>
     <ul>
-        <li *ngIf=(isLogin)><a [routerLink]="['board/1']">Home</a></li>
-        <li *ngIf=(isLogin)><a [routerLink]="['projects/create']">Create Project</a></li>
-        <li *ngIf=(isLogin)><a [routerLink]="['projects/list']">List Project</a></li>
+        <li *ngIf=(isLogin)><a [routerLink]="['projects/list']">Projects</a></li>
         <li *ngIf=(!isLogin)><a [routerLink]="['auth/login']">Sigin</a></li>
         <li *ngIf=(!isLogin)><a [routerLink]="['auth/signup']">Signup</a></li>
     </ul>
