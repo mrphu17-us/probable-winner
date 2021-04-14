@@ -1,0 +1,30 @@
+@startuml
+title MWA Project - Task Management
+left to right direction
+
+actor User
+
+rectangle user {
+  User --> (login)
+
+  rectangle board{
+    (login) --> (list boards)
+    (login) --> (create board)
+    (login) --> (update board)
+    (login) --> (delete board)
+
+    rectangle card{
+      (list boards) --> (list cards)
+      (list boards) --> (create card)
+      (list boards) --> (update card)
+      (list boards) --> (delete card)
+    }
+  }
+
+
+  
+  User --> (signup)
+  (signup).>(login)
+}
+
+@enduml

@@ -4,6 +4,14 @@
 * Team Member: Stojan Terziev
 * Team Member: Bayartsogt Yadamsuren
 
+Contents:
+- [x] UML
+- [x] Backend Structure
+- [x] Frontend Structure
+
+## UML
+![ALT](uml/mwa-use-case.png)
+
 ## Backend Structure
 
 ```
